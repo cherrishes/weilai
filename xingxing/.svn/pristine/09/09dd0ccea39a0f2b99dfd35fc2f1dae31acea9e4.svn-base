@@ -1,0 +1,85 @@
+freezer = {
+    /**
+     * web 发送一个通知
+     *
+     * @param string t   标题，must
+     * @param string m   内容，must
+     * @param int p      页面，must：One of 1, 2;1：用户点击通知后在正常设备页打开，2：用户点击通知后在故障设备页打开，other value：Android端将不会发出通知
+     * @param string u   地址，must：须是http/https开头的合法url，否则Android端将不发出通知
+     */
+    notify: function (t, m, p, u) {
+        android.notify(t, m, p, u);
+    },
+    /**
+     * 震动手机
+     * @param long t 震动的毫秒数，推荐200 - 500
+     */
+    vibration: function (t) {
+        android.vibration(t);
+    },
+    /**
+     * 显示一个toast消息
+     * @param string m 显示的消息内容
+     */
+    message: function (m) {
+        android.message(m);
+    },
+    selectback: {},
+    /**
+     * 显示一个选择框给用户，如果用户取消不会通知js
+     * @param string t 选择框的标题
+     * @param string[] v 选择内容列表
+     * @param function f 用户选择后回调方法，需要一个string参数
+     */
+    showSelect: function (t, v, f) {
+        this.selectback = f;
+        android.showSelect(t, v);
+    },
+    /**
+     * 在新窗体打开一个新页面
+     * @param string u url地址
+     */
+    openNewUrlWindow: function(u) {
+        android.openNewUrlWindow(u);
+    },
+    rbtncallback: {},
+    /**
+     * 设置一个右上角按钮，仅允许调用一次，仅在openNewUrlWindow打开的新窗体有用
+     * @param string t 按钮文字
+     * @param string f 用户点击按钮后回调方法名，不需要参数
+     */
+    setRightButton: function (t, f) {
+        this.rbtncallback = f;
+        android.setRightButton(t);
+    },
+    rbtnokback: {},
+    /**
+     * 显示右上角确定按钮，仅在openNewUrlWindow打开的新窗体有用
+     * @param function f 用户点击按钮后回调js方法名称
+     */
+    showRightOk: function (f) {
+        this.rbtnokback = f;
+        android.showRightOk();
+    },
+    /**
+     * 关闭当前页面，仅在openNewUrlWindow打开的新窗体有用
+     * @param boolean b 是否需要刷新之前的页面，true刷新，false不刷新
+     */
+    closeWindow: function (b) {
+        android.closeWindow(b);
+    },
+    /**
+     * 设置是否显示左上角back按钮，该方法只在主页面调用有效，通过openNewUrlWindow打开的窗体调用则无效
+     * @param boolean b 是否显示，true显示，false隐藏
+     */
+    setBackEnable: function(b) {
+        android.setBackEnable(b);
+    },
+	/**
+     * 拿到APP版本号，可以直接拿到返回值
+     * @param int v 客户端版本号
+     */
+	getAppVersion: function() {
+		return android.getAppVersion();
+	}
+}

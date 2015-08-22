@@ -1,0 +1,24 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>AndroidJs</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="button" id="btnClose" value="关闭"/><br/>
+		</form>
+		<script type="text/javascript" charset="utf-8" src="android-assets/static/js/jsapi.js"></script>
+		
+		<script>
+			var save = function() {
+				alert("android操作完成");
+			};
+			freezer.setCallBack(save);//设置用户完成操作后回调方法
+			document.getElementById("btnClose").onclick = function() {
+				freezer.closeWindow(true);//后台执行完成后关闭当前window
+			};
+		</script>
+	</body>
+</html>

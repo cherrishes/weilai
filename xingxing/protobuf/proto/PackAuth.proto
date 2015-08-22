@@ -1,0 +1,31 @@
+package com.ebanswers.starfreezer.proto;
+
+option java_package = "com.ebanswers.starfreezer.proto";
+option java_outer_classname = "PackAuth";
+
+message AuthBody {
+	/**
+	 * 客户端：请求时认证token
+	 */
+	optional string token = 1;
+	/**
+	 * 客户端请求命令
+	 */
+	optional int32 requestCmd = 2;
+	/**
+	 * 服务端响应命令，不一定每次都有
+	 */
+	optional int32 responseCmd = 3;
+	/**
+	 * 服务端：是否成功执行
+	 */
+	optional bool isSucceed = 4;
+	/**
+	 * pb密钥，rc4 key
+	 */
+	optional string pbKey = 5;
+	/**
+	 * pb报文，rc4 value；isSucceed为true时，为pb报文，为false时，为错误信息
+	 */
+	optional string pbBody = 6;
+}

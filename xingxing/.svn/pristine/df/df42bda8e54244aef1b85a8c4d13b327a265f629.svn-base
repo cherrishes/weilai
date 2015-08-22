@@ -1,0 +1,548 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>api文档 &mdash; xingxing 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xingxing 1.0 documentation" href="index.html"/>
+        <link rel="next" title="更新日志" href="updatelog.html"/>
+        <link rel="prev" title="项目部署" href="deploy.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> xingxing</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id3">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id6">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id7">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">主要模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id2">手机页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id3">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id4">微信公众号</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">基本要求</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id2">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id3">手机页面</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">手机页面开发相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id2">图片的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id3">移动设备上的事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">功能需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">设备列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db.html">数据库设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id2">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id3">集合结构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">调试与工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#memcached">memcached可视化工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">项目部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">基本配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">协议服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">更新到服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">第三方帐号登录接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mac">上报mac地址接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">获取mac地址列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#token">更新Token时间接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">客服电话接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">关于接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">设备列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id20">其他说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updatelog.html">更新日志</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id2">2015.06.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id3">2015.06.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id4">2015.06.24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id5">2015.06.26</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">xingxing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>api文档</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="api">
+<h1>api文档<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>第三方帐号登录接口<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/third_login">http://qingke.device.53iq.com/freezer/api/third_login</a></li>
+<li>HTTP方式：POST</li>
+</ul>
+<div class="section" id="id2">
+<h3>输入参数<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="80%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>openid</td>
+<td>openid/uid</td>
+</tr>
+<tr class="row-odd"><td>access_token</td>
+<td>token值</td>
+</tr>
+<tr class="row-even"><td>account_type</td>
+<td>帐号类型（0：普通帐号，1：QQ，2：微信，3：新浪微博）</td>
+</tr>
+<tr class="row-odd"><td>head_url</td>
+<td>头像（url地址）</td>
+</tr>
+<tr class="row-even"><td>nickname</td>
+<td>昵称</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id3">
+<h3>输出参数<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;is_need_update&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&quot;token&quot;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;expire_in&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_host&#39;</span><span class="p">:</span> <span class="s">&#39;mosquitto主机地址&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_port&#39;</span><span class="p">:</span> <span class="s">&#39;主机端口&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_client_id&#39;</span><span class="p">:</span> <span class="s">&#39;client_id，客户端唯一标识&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_sub_user&#39;</span><span class="p">:</span> <span class="s">&#39;订阅者帐号&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_sub_pwd&#39;</span><span class="p">:</span> <span class="s">&#39;订阅者密码&#39;</span><span class="p">,</span>
+        <span class="s">&#39;mosquitto_topic&#39;</span><span class="p">:</span> <span class="s">&#39;订阅主题&#39;</span>
+
+    <span class="p">},</span>
+    <span class="s">&quot;errormsg&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mac">
+<h2>上报mac地址接口<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/submit_mac">http://qingke.device.53iq.com/freezer/api/submit_mac</a></li>
+<li>HTTP方式：POST</li>
+</ul>
+<div class="section" id="id4">
+<h3>输入参数<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="85%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>登录时返回的TOKEN</td>
+</tr>
+<tr class="row-odd"><td>openid</td>
+<td>openid/uid</td>
+</tr>
+<tr class="row-even"><td>account_type</td>
+<td>帐号类型（0：普通帐号，1：QQ，2：微信，3：新浪微博）</td>
+</tr>
+<tr class="row-odd"><td>mac</td>
+<td>格式采用16进制串的方式（长度为12字节），不需要0X前缀，如： 1234567890AB</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h3>输出参数<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="s">&#39;一直为空&#39;</span><span class="p">,</span>
+    <span class="s">&quot;errormsg&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id6">
+<h2>获取mac地址列表接口<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/get_mac_list">http://qingke.device.53iq.com/freezer/api/get_mac_list</a></li>
+<li>HTTP方式：POST</li>
+</ul>
+<div class="section" id="id7">
+<h3>输入参数<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="42%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>登录时返回的TOKEN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id8">
+<h3>输出参数<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">mac值的列表</span><span class="p">],</span>
+    <span class="s">&quot;errormsg&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="token">
+<h2>更新Token时间接口<a class="headerlink" href="#token" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/update_token">http://qingke.device.53iq.com/freezer/api/update_token</a></li>
+<li>HTTP方式：GET</li>
+</ul>
+<div class="section" id="id9">
+<h3>输入参数<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="65%" />
+<col width="35%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>Token值</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id10">
+<h3>输出参数<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span>
+    <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;token&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">,</span>
+        <span class="s">&#39;expire_in&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span>
+    <span class="p">},</span>
+    <span class="s">&quot;errormsg&quot;</span><span class="p">:</span> <span class="s">&quot;&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id11">
+<h2>客服电话接口<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/service_phone">http://qingke.device.53iq.com/freezer/api/service_phone</a></li>
+<li>HTTP方式：GET/POST</li>
+</ul>
+<div class="section" id="id12">
+<h3>输入参数<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>登录时返回的TOKEN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>输出参数<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;phone&quot;</span><span class="p">:</span> <span class="s">&quot;400-620-0033&quot;</span><span class="p">},</span> <span class="s">&#39;errormsg&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id14">
+<h2>关于接口<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/about">http://qingke.device.53iq.com/freezer/api/about</a></li>
+<li>HTTP方式：GET/POST</li>
+</ul>
+<div class="section" id="id15">
+<h3>输入参数<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="32%" />
+<col width="68%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>登录时返回的TOKEN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id16">
+<h3>输出参数<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span><span class="s">&quot;_status&quot;</span><span class="p">:</span> <span class="s">&quot;ok&quot;</span><span class="p">,</span> <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;info&quot;</span><span class="p">:</span> <span class="n">info</span><span class="p">},</span> <span class="s">&#39;errormsg&#39;</span><span class="p">:</span> <span class="s">&#39;&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id17">
+<h2>设备列表接口<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>接口地址：<a class="reference external" href="http://qingke.device.53iq.com/freezer/api/device/device_list">http://qingke.device.53iq.com/freezer/api/device/device_list</a></li>
+<li>HTTP方式：GET</li>
+</ul>
+<div class="section" id="id18">
+<h3>输入参数<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="14%" />
+<col width="86%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">参数</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>token</td>
+<td>登录时返回的TOKEN</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>type=1表示正常设备列表，type=2表示请求异常设备列表</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id19">
+<h3>输出<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<p>HTML页面</p>
+</div>
+</div>
+<div class="section" id="id20">
+<h2>其他说明<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>TOKEN异常<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="36%" />
+<col width="64%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">HTTP状态码</th>
+<th class="head">原因</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>401 unauthorized</td>
+<td>未传TOKEN</td>
+</tr>
+<tr class="row-odd"><td>401 invalid token</td>
+<td>TOKEN无效</td>
+</tr>
+<tr class="row-even"><td>401 token timeout</td>
+<td>TOKEN超时，默认TIMEOUT为36000s</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="updatelog.html" class="btn btn-neutral float-right" title="更新日志">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="deploy.html" class="btn btn-neutral" title="项目部署"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, 53iq.
+    </p>
+  </div>
+
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

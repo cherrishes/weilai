@@ -1,0 +1,329 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>更新日志 &mdash; xingxing 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xingxing 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="api文档" href="api.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> xingxing
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id3">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id6">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id7">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">主要模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id2">手机页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id3">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id4">微信公众号</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">基本要求</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id2">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id3">手机页面</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">手机页面开发相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id2">图片的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id3">移动设备上的事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">功能需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">设备列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db.html">数据库设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id2">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id3">集合结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-user">ebc_user(用户集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-device">ebc_device(设备集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-room">ebc_room(房间集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-user-device">ebc_user_device(用户设备集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-status">ebc_status(状态集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-setup">ebc_setup(配置集合)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">调试与工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#memcached">memcached可视化工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">项目部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">基本配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">协议服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">更新到服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">第三方帐号登录接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id2">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id3">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#mac">上报mac地址接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id4">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id5">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id6">获取mac地址列表接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id7">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id8">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#token">更新Token时间接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id9">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id10">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id11">客服电话接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id12">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id13">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id14">关于接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id15">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id16">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id17">设备列表接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id18">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id19">输出</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id20">分享页面下载接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id21">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id22">输出</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id23">其他说明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id24">TOKEN异常</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">更新日志</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">2015.06.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">2015.06.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">2015.06.24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">2015.06.26</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">xingxing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>更新日志</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>更新日志<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>2015.06.11<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>删除有设备的房间时，不让删除并提示“不能删除有设备的房间”</li>
+<li>添加和修改房间名时，房间名长度限制为20个以内，超出进行提示“房间名长度1～20字&#8221;(对话框和用户刚才输入的内容不能消失)</li>
+<li>长按设备列表的弹出框中的默认值用alias，不用真实id</li>
+<li>显示坐标轴,显示最后49个点的数据（举例:如现在14:13,显示坐标系从昨天14:00&#8211;今日14:00，坐标的最后一个点为当前时刻半小时内的点）</li>
+<li>设备列表中离线设备不显示柜温、柜湿、环温（用一个“-”号表示，不用单位，颜色用灰色），在线设备直接从ebc_device中的tag标签下的current_status中取</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>2015.06.16<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>添加一个第三方帐号登录接口，接收openid、access_token、帐号类型（1：qq、2：微信、3：新浪微博）、头像、昵称（更新接口文档）</li>
+<li>接收mac地址、openid、帐号类型的接口（用于设备与帐号关联）</li>
+<li>根据openid和帐号类型获取mac地址列表的接口（用于app排除显示已添加的设备）</li>
+<li>设备列表排序，按在线状态和异常类型排序</li>
+</ol>
+</div>
+<div class="section" id="id4">
+<h2>2015.06.24<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>设备详细页面，箱内灯开关，添加滑动切换按钮，打开时加“开”字，关闭加“关”字</li>
+<li>设备详细页面，统计图表改成连续的（表格不变），当前点没有数据的从左右两边取</li>
+<li>设备列表页面，左侧不要有红块出现</li>
+<li>报警推送，当设备详细页面有报警信息推送过来时，往手机通知栏推送消息（调用接口），点击消息时进入具体页面（判断当前页面是否打开，及是否链接被修改）</li>
+</ol>
+</div>
+<div class="section" id="id5">
+<h2>2015.06.26<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>添加房间时，房间名重复，提示之后再弹出刚才的界面</li>
+<li>设备列表删除设备功能（删除ebc_user_device集合中的记录）</li>
+</ol>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="api.html" class="btn btn-neutral" title="api文档" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, 53iq.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>星星电器项目文档 &mdash; xingxing 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xingxing 1.0 documentation" href="#"/>
+        <link rel="next" title="项目规范" href="standard.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="#" class="icon icon-home"> xingxing
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id3">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id6">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id7">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">主要模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id2">手机页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id3">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id4">微信公众号</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">基本要求</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id2">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id3">手机页面</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">手机页面开发相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id2">图片的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id3">移动设备上的事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">功能需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">设备列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db.html">数据库设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id2">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id3">集合结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-user">ebc_user(用户集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-device">ebc_device(设备集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-room">ebc_room(房间集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-user-device">ebc_user_device(用户设备集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-status">ebc_status(状态集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-setup">ebc_setup(配置集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db.html#ebc-device-token-device-token">ebc_device_token(device_token集合)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">调试与工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#memcached">memcached可视化工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">项目部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">基本配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">协议服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">更新到服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">第三方帐号登录接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id2">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id3">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#mac">上报mac地址接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id4">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id5">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id6">获取mac地址列表接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id7">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id8">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#token">更新Token时间接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id9">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id10">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id11">客服电话接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id12">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id13">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id14">关于接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id15">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id16">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id17">设备列表接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id18">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id19">输出</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id20">分享页面下载接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id21">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id22">输出</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id23">其他说明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id24">TOKEN异常</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updatelog.html">更新日志</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id2">2015.06.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id3">2015.06.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id4">2015.06.24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id5">2015.06.26</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">xingxing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>星星电器项目文档</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>星星电器项目文档<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id3">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id6">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id7">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">主要模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id2">手机页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id3">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id4">微信公众号</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">基本要求</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id2">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id3">手机页面</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">手机页面开发相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id2">图片的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id3">移动设备上的事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">功能需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">设备列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db.html">数据库设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id2">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db.html#id3">集合结构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">调试与工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#memcached">memcached可视化工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">项目部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">基本配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">协议服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">更新到服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">第三方帐号登录接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#mac">上报mac地址接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id6">获取mac地址列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#token">更新Token时间接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id11">客服电话接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id14">关于接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id17">设备列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id20">分享页面下载接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id23">其他说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updatelog.html">更新日志</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id2">2015.06.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id3">2015.06.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id4">2015.06.24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id5">2015.06.26</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="standard.html" class="btn btn-neutral float-right" title="项目规范" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, 53iq.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

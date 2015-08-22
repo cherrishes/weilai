@@ -1,0 +1,262 @@
+import json
+import logging
+import uuid
+import datetime
+import copy
+
+from bson import ObjectId
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
+from common.cache_helper import setval, getval
+from conf.memcachedconf import TOKEN_PREFIX, TIMEOUT
+from conf.mongodbconf import DEFAULT_ROOM_ID
+from conf.mqttconf import *
+from util.decorators import token_required
+from util.mongodbutil import get_db
+
+
+ret_obj = {
+    '_status': '',
+    'data': '',
+    'errormsg': ''
+}
+
+
+def error(request):
+    return render(request, "freezer/api/error.html", locals())
+
+
+@token_required
+def service_phone(request, user_id):
+    """
+    客服电话接口
+    :param request:
+    :return:
+    """
+    ret = {"_status": "ok", "data": {"phone": "400-7654-315"}, 'errormsg': ''}
+    return HttpResponse(json.dumps(ret))
+
+
+@token_required
+def about(request, user_id):
+    """
+    关于接口
+    :param request:
+    :return:
+    """
+    info = '53iq“智能油烟机+智能厨房云”的国际化、开放式架构，对原本各家封闭式路线、' \
+           '专注国内市场的厨房电器行业也是一大触动，给一线厂商提供了突出、领航业界的机会，' \
+           '给二线三线厂商也创造了弯道超车的机会。\n“智能厨房”时代由此开启！'
+    ret = {"_status": "ok", "data": {"info": info}, 'errormsg': ''}
+    return HttpResponse(json.dumps(ret))
+
+
+@csrf_exempt
+def third_login(request):
+    """
+    第三方帐号登录接口，接收openid、access_token、帐号类型（1：qq、2：微信、3：新浪微博）、头像、昵称（更新接口文档）
+    :param request:
+    :return:
+    """
+    openid = request.REQUEST.get('openid', None)
+    access_token = request.REQUEST.get('access_token', None)
+    account_type = request.REQUEST.get('account_type', 0)
+
+    head_url = request.REQUEST.get('head_url', None)
+    nick_name = request.REQUEST.get('nickname', None)
+    ret = copy.copy(ret_obj)
+    account_type = int(account_type)
+    if account_type <= 0 or account_type > 3:
+        ret['_status'] = 'error'
+        ret['errormsg'] = '帐号类型错误'
+        return HttpResponse(json.dumps(ret))
+    if openid and openid != "null":
+        try:
+            _id = str(account_type) + '_' + openid
+            doc = {
+                # '_id': _id,
+                'account': _id,
+                'access_token': access_token,
+                'password': '',
+                'type': int(account_type),
+                'head_url': head_url,
+                'nickname': nick_name,
+                'create_date': datetime.datetime.utcnow()
+            }
+            db = get_db()
+            db.ebc_user.update({'_id': _id}, {'$set': doc}, upsert=True)
+
+            guid = uuid.uuid1()
+            token = TOKEN_PREFIX + str(guid)
+            setval(token, _id)
+
+            data = {
+                'is_need_update': 0,
+                'type': account_type,
+                "token": token,
+                'expire_in': TIMEOUT,
+                'mosquitto_host': MOSQUITTO_HOST,
+                'mosquitto_port': MOSQUITTO_PORT,
+                'mosquitto_client_id': MOSQUITTO_PREFIX + str(guid),
+                'mosquitto_sub_user': MOSQUITTO_SUB_USER,
+                'mosquitto_sub_pwd': MOSQUITTO_SUB_PWD,
+                'mosquitto_topic': MOSQUITTO_TOPIC_PREFIX + _id
+            }
+            ret['_status'] = 'ok'
+            ret['data'] = data
+            return HttpResponse(json.dumps(ret))
+        except Exception as e:
+            print(e)
+            ret['_status'] = 'error'
+            ret['errormsg'] = 'Token创建失败'
+            return HttpResponse(json.dumps(ret))
+
+    else:
+        ret['_status'] = 'error'
+        ret['errormsg'] = 'openid/uid为空'
+        return HttpResponse(json.dumps(ret))
+
+
+@csrf_exempt
+@token_required
+def submit_mac(request, user_id):
+    """
+    接收mac地址、openid、帐号类型的接口（用于设备与帐号关联）
+    :param request:
+    :return:
+    """
+    openid = request.POST.get('openid', None)
+    account_type = request.POST.get('account_type', 0)
+    macs = request.POST.get('mac', None)
+    ret = copy.copy(ret_obj)
+    if openid and account_type and macs:
+        mac_array = macs.split('|')
+        for mac in mac_array:
+            user_id = str(account_type) + '_' + openid
+            mac = mac.replace(":", "")
+            mac = mac.upper()
+            _id = user_id + mac
+            db = get_db()
+            result = db.ebc_user_device.find_one({'_id': _id})
+            device = db.ebc_device.find_one({"mac": mac, "is_abandon": False})
+            device_id = None
+            if device:
+                device_id = device['_id']
+            try:
+                if result:
+                    doc = {
+                        "device_id": device_id
+                    }
+                    db.ebc_user_device.update({"_id": _id}, {'$set': doc}, upsert=False)
+                else:
+                    doc = {
+                        "_id": _id,
+                        "user_id": user_id,
+                        "mac": mac,
+                        "device_id": device_id,
+                        "room_id": ObjectId(DEFAULT_ROOM_ID),
+                        "alias": device_id,
+                        "create_date": datetime.datetime.utcnow()
+                    }
+                    db.ebc_user_device.insert(doc)
+            except Exception as e:
+                logging.getLogger("").error(mac)
+                logging.getLogger("").error(str(e))
+                # ret['_status'] = 'error'
+                # ret['errormsg'] += str(mac) + "|"
+        ret['_status'] = 'ok'
+        # if ret['_status'] == '':
+        # ret['_status'] = 'ok'
+        # else:
+        # ret['errormsg'] += '错误'
+    else:
+        ret['_status'] = 'error'
+        ret['errormsg'] = '参数传入出错'
+    return HttpResponse(json.dumps(ret))
+
+
+@token_required
+def get_mac_list(request, user_id):
+    """
+    根据openid和帐号类型获取mac地址列表的接口（用于app排除显示已添加的设备）
+    根据用户的ID获取mac地址列表
+    :param request:
+    :return:
+    """
+    ret = copy.copy(ret_obj)
+    if user_id:
+        try:
+            db = get_db()
+            results = db.ebc_user_device.find({'user_id': user_id, 'device_id': {'$ne': None}})
+        except Exception as e:
+            ret['_status'] = 'error'
+            ret['errormsg'] = '数据库查询出错'
+            return HttpResponse(json.dumps(ret))
+
+        macs = []
+        for result in results:
+            macs.append(result.get('mac', ''))
+        ret['_status'] = 'ok'
+        ret['data'] = macs
+    else:
+        ret['_status'] = 'error'
+        ret['errormsg'] = '传入参数错误'
+    return HttpResponse(json.dumps(ret))
+
+
+def update_token(request):
+    """
+    更新token时间
+    :param request:
+    :return:
+    """
+    token = request.GET.get('token', None)
+    ret = copy.copy(ret_obj)
+    if token:
+        value = getval(str(token))
+        if value:
+            setval(str(token), value)
+            ret['_status'] = 'ok'
+            ret['data'] = {'token': token, 'expire_in': TIMEOUT}
+        else:
+            ret['_status'] = 'error'
+            ret['errormsg'] = 'Token已失效，请重新登录'
+    else:
+        ret['_status'] = 'error'
+        ret['errormsg'] = '传入的Token值错误'
+    return HttpResponse(json.dumps(ret))
+
+@csrf_exempt
+@token_required
+def submit_device_token(request, user_id):
+    """
+    根据用户ios设备的device_token
+    根据用户的ID获取用户ios设备device_token
+    :param request:
+    :return:
+    """
+    if request.method == 'POST':
+        device_token = request.POST.get('device_token', None)
+        res = None
+        error_message = ''
+        if device_token is not None:
+            doc = {
+                 '_id': user_id,
+                'token': device_token,
+                'create_date': datetime.datetime.utcnow()
+            }
+
+            try:
+                db = get_db()
+                db.ebc_device_token.save(doc)
+                res = 'ok'
+            except Exception as e:
+                res = 'error'
+                error_message = e
+
+
+        return HttpResponse(json.dumps({"_status": res, "error_msg": error_message}))
+
+    return HttpResponse("请求方式错误")

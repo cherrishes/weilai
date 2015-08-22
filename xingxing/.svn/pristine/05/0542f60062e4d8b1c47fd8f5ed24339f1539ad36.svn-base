@@ -1,0 +1,225 @@
+import datetime
+import json
+
+from bson import ObjectId
+from django.http import HttpResponse
+from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
+
+from conf.mongodbconf import DEFAULT_ROOM_ID
+from util.decorators import token_required
+from util.mongodbutil import get_db
+
+
+def home(request):
+    return render(request, "freezer/home.html", locals())
+
+
+@csrf_exempt
+def test(request):
+    if request.method == "POST":
+        users = request.REQUEST.get("id", "")
+        val = request.REQUEST.get("value", "")
+        if users and val:
+            from common.mqtt_helper import send
+
+            user_arr = []
+            users_obj = json.loads(users)
+            for i in users_obj:
+                user_arr.append(str(i))
+            if len(user_arr) > 0:
+                r = send(val, user_arr)
+            else:
+                r = -3
+            return HttpResponse(str(r))
+    db = get_db()
+    users = db.ebc_user.find({}, {"_id": 1, "nickname": 1, "head_url": 1}).limit(100)
+    return render(request, "freezer/test.html", locals())
+
+
+@csrf_exempt
+@token_required
+def add_room(request, user_id):
+    """
+    添加房间，先检查房间是否存在,存在返回失败
+    status: 1-成功；0-失败
+    :param request:
+    :return:
+    """
+    if request.POST:
+        room_name = request.POST.get('room_name', None)
+        if room_name is not None:
+            db = get_db()
+            result = db.ebc_room.find_one({'user_id': user_id, 'name': room_name})
+            if result:
+                return HttpResponse(json.dumps({'status': 0, 'error': '房间名称已存在'}))
+            else:
+                room = {
+                    'user_id': user_id,
+                    'name': room_name,
+                    'create_date': datetime.datetime.now()
+                }
+                room_id = db.ebc_room.insert(room)
+                if room_id:
+                    return HttpResponse(json.dumps({'status': 1, 'room_id': str(room_id)}))
+                else:
+                    return HttpResponse(json.dumps({'status': 0, 'error': '添加房间失败'}))
+        else:
+            return HttpResponse(json.dumps({'status': 0, 'error': '房间名称为空'}))
+    return HttpResponse(json.dumps({'status': 0, 'error': '请求错误'}))
+
+
+@csrf_exempt
+@token_required
+def update_room(request, user_id):
+    """
+    更新房间
+    :param request:
+    :param user_id:
+    :return: 更新成功返回1，失败返回0
+    """
+    if request.POST:
+        room_name = request.POST.get('room_name', None)
+        dev_id = request.POST.get('dev_id', None)
+        if room_name is not None:
+            db = get_db()
+            result = db.ebc_user_device.find_one({'user_id': user_id, 'device_id': dev_id})
+            room_id = result.get('room_id', None)
+            name = result.get('name')
+            if name and name == room_name:
+                return HttpResponse(json.dumps({'status': 1, 'msg': '房间名称已存在!'}))
+            if room_id:
+                try:
+                    db.ebc_room.update({'_id': room_id}, {'$set': {'name': room_name}})
+                    return HttpResponse(json.dumps({'status': 1, 'msg': '更新成功!'}))
+                except Exception as e:
+                    print(e)
+                    return HttpResponse(json.dumps({'status': 0, 'msg': '更新失败!'}))
+            else:
+                return HttpResponse(json.dumps({'status': 0, 'msg': '房间不存在!'}))
+        else:
+            return HttpResponse(json.dumps({'status': 0, 'msg': '房间名称为空!'}))
+    return HttpResponse(json.dumps({'status': 0, 'msg': '请求类型错误!'}))
+
+
+@csrf_exempt
+@token_required
+def delete_room(request, user_id):
+    """
+    删除房间
+    :param request:
+    :return:
+    """
+    if request.POST:
+        _id = request.POST.get('_id', None)
+        if _id is not None:
+            db = get_db()
+            try:
+                # 根据房间_id删除对应房间
+                res = db.ebc_room.remove({'_id': ObjectId(_id), 'user_id': user_id})
+                # 删除成功返回1，失败返回0
+                if res:
+                    return HttpResponse(json.dumps({'r': '0'}))
+                else:
+                    # 删除成功后将该房间中的设备的room_id设置为一个默认值，表示未分配房间
+                    db.ebc_device.update({'room_id': ObjectId(_id)},
+                                         {'$set': {'room_id': ObjectId(DEFAULT_ROOM_ID)}}, multi=True)
+                    return HttpResponse(json.dumps({'r': '1'}))
+
+            except Exception as e:
+                print(e)
+                return HttpResponse(json.dumps({'r': '0'}))
+
+    return HttpResponse(json.dumps({'r': '0'}))
+
+
+@csrf_exempt
+@token_required
+def delete_dev(request, user_id):
+    """
+    删除房间
+    :param request:
+    :return:
+    """
+
+    if request.POST:
+        dev_id = request.POST.get('dev_id', None)
+
+        if dev_id is not None:
+            db = get_db()
+            try:
+                # 根据device_id删除对应设备
+                res = db.ebc_user_device.remove({'device_id': dev_id, 'user_id': user_id})
+                # 删除成功返回1，失败返回0
+                if res:
+                    return HttpResponse(json.dumps({'r': '0'}))
+                else:
+                    # 删除成功后将该房间中的设备的room_id设置为一个默认值，表示未分配房间
+                    # db.ebc_device.update({'room_id': ObjectId(_id)},
+                    # {'$set': {'room_id': ObjectId(DEFAULT_ROOM_ID)}}, multi=True)
+                    return HttpResponse(json.dumps({'r': '1'}))
+
+            except Exception as e:
+                print(e)
+                return HttpResponse(json.dumps({'r': '0'}))
+
+    return HttpResponse(json.dumps({'r': '0'}))
+
+
+@csrf_exempt
+@token_required
+def update_device_alias(request, user_id):
+    """
+    更新设备别名
+    :param request:
+    :param user_id:
+    :return: 更新成功返回1，失败返回0
+    """
+    if request.POST:
+        dev_alias = request.POST.get('dev_alias', None)
+        dev_id = request.POST.get('dev_id', None)
+        if dev_alias:
+            db = get_db()
+            result = db.ebc_user_device.find_one({'user_id': user_id, 'device_id': dev_id})
+            if result:
+                if result.get('alias') == dev_alias:
+                    return HttpResponse(json.dumps({'status': 0, 'msg': '设备别名已存在!'}))
+                else:
+                    try:
+                        db.ebc_user_device.update({'_id': result.get('_id')}, {'$set': {'alias': dev_alias}})
+                        return HttpResponse(json.dumps({'status': 1, 'msg': '设备编号更新成功!'}))
+                    except Exception as e:
+                        print(e)
+                        return HttpResponse(json.dumps({'status': 0, 'msg': '更新设备操作失败!'}))
+            else:
+                return HttpResponse(json.dumps({'status': 0, 'msg': '设备不存在!'}))
+        else:
+            return HttpResponse(json.dumps({'status': 0, 'msg': '设备别名不可为空!'}))
+
+    return HttpResponse(json.dumps({'status': 0, 'msg': '请求类型错误!'}))
+
+@csrf_exempt
+def warn_detail(request):
+    db = get_db()
+    err_content = request.GET.get('content',None)
+    flag = request.GET.get('flag',None)
+    res = None
+    try:
+        user_id = flag[:-12]
+        mac = flag[-12:]
+        res = db.ebc_user_device.find_one({'user_id':user_id,'mac':mac})
+    except Exception as e:
+        print(e)
+    if res:
+        device_id = res.get('device_id')
+        alias = res.get('alias')
+        room_id = res.get('room_id')
+
+        rack = db.ebc_room.find_one({'_id':ObjectId(room_id)})
+        if rack:
+            room_name=rack.get('name')
+
+        current_date = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        return render(request, "freezer/api/warn_detail.html", locals())
+    else:
+        return render(request, "freezer/api/error.html", locals())

@@ -1,0 +1,27 @@
+package com.ebanswers.starfreezer.proto;
+
+option java_package = "com.ebanswers.starfreezer.proto";
+option java_outer_classname = "PackUser";
+
+message UserBody {
+	/**
+	 * 用户帐号，目前只是手机号
+	 */
+	optional string userAccount = 1;
+	/**
+	 * 用户密码
+	 */
+	optional string userPass = 2;
+	/**
+	 * 用户昵称
+	 */
+	optional string userNickName = 3;
+	/**
+	 * 用户性别
+	 */
+	optional int32 userSex = 4;
+	/**
+	 * 用户头像
+	 */
+	optional string userHeadUrl = 5;
+}

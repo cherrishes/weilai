@@ -1,0 +1,236 @@
+from bson import ObjectId
+from django.core.urlresolvers import reverse
+import pymongo
+
+from util.mongodbutil import get_db
+
+
+__author__ = 'rdy'
+import json
+
+from django.http import HttpResponse, HttpResponseRedirect
+from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import render
+
+from app.freezer.api.room_dev_list.room_list.handler import Handle
+from util.decorators import token_required
+
+handle = Handle()
+
+
+@csrf_exempt
+@token_required
+def device_list(request, user_id):
+    # 接收参数type=2表示请求异常设备列表,其他表示所有设备列表
+    # a = request.GET['type']
+    # access_token = request.GET['token']
+    db = get_db()
+    is_get = False
+    typeid = request.REQUEST.get("type", "1")
+    if typeid == "2":
+        title = "异常设备"
+    else:
+        title = "设备"
+    # 根据是不是GET请求来判断请求的
+    if request.method == 'GET':
+        is_get = True
+        room_id = request.GET.get('room_id', '0')
+        if room_id == '0':
+            room_name = '所有房间'
+            dev_total = db.ebc_user_device.find({'user_id': user_id, 'device_id': {'$ne': None}}).count()
+        else:
+            room = db.ebc_room.find_one({'_id': ObjectId(room_id), 'user_id': user_id})
+            room_name = room.get('name', '所有房间')
+            dev_total = db.ebc_user_device.find({'room_id': ObjectId(room_id), 'user_id': user_id}).count()
+    all_total = db.ebc_user_device.find({"user_id": user_id, 'device_id': {'$ne': None}}).count()
+    res = db.ebc_room.find({'user_id': user_id}).sort("create_date", pymongo.ASCENDING).limit(10)
+    results = []
+    for r in res:
+        result = dict()
+        result['id'] = str(r['_id'])
+        result['create_date'] = str(r['create_date'])
+        result['name'] = r['name']
+        result['total'] = db.ebc_user_device.find({'room_id': r['_id'], 'user_id': user_id}).count()
+        results.append(result)
+
+    return render(request, "freezer/api/room.html", locals())
+
+
+@csrf_exempt
+@token_required
+def get_extra_room(request, user_id):
+    print(user_id)
+    skip = int(request.POST.get('total', 0))
+    limit = int(request.POST.get('limit', 10))
+    db = get_db()
+    results = db.ebc_room.find({'user_id': user_id}).sort("create_date", pymongo.ASCENDING).skip(skip).limit(limit)
+    html = ''
+    if results:
+        if results.count() > skip:
+            for r in results:
+                num = db.ebc_user_device.find({'room_id': r['_id']}).count()
+                html += '<li class="ui-add-room" style="background-color: red;">' \
+                        '<div class="aroom list-group-item"' \
+                        'id="' + str(r['_id']) + '">' + r['name'] + '(' + str(num) + ')' + \
+                        '</div><span class="ui-delete-room">删除</span></li>'
+            return HttpResponse(html)
+        else:
+            return HttpResponse('<div class="ui-loading-wrap"><p>没有更多了...</p></i></div>')
+    else:
+        return HttpResponse('<div class="ui-loading-wrap"><p>加载失败...</p></i></div>')
+
+
+@csrf_exempt
+@token_required
+def get_extra_device(request, user_id):
+    skip = int(request.POST.get('skip', 0))
+    limit = int(request.POST.get('limit', 10))
+    # status标识设备的状态，0标识设备正常， 其他表示设备异常
+    status = int(request.POST.get('status', 0))
+    room_id = request.POST.get('room_id', '0')
+    dev_list = handle.get_device_by_room(user_id, room_id, skip, limit, status)
+    normal_data = []
+    for i in dev_list:
+        dev_id = i.get('_id', 0)
+        data = handle.get_hum_and_tempe_byId(dev_id)
+        normal_data.append(data)
+    return HttpResponse(json.dumps(normal_data))
+
+
+@csrf_exempt
+@token_required
+def get_total(request, user_id):
+    r = request.POST.get("flag", None)
+    if r == 'tl':
+        all_num = handle.get_total_dev(user_id)
+        if all_num:
+            back_num = [{'normal': all_num.split(',')[0]}, {'error': all_num.split(',')[1]}]
+        else:
+            back_num = [0, 0]
+        return HttpResponse(json.dumps(back_num))
+
+
+def update_data(request):
+    handle.insert_into_db()
+    return HttpResponse("ok")
+
+
+@csrf_exempt
+@token_required
+def normal_data(request, user_id):
+    room_id = request.POST.get('room_id', 0)
+    room_skip = request.POST.get('room_skip', 0)
+    room_limit = request.POST.get('room_limit', 10)
+    normal_data = []
+    if user_id:
+        dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit))
+        for i in dev_list:
+            dev_id = i.get('device_id', None)
+            if dev_id:
+                data = handle.get_hum_and_tempe_byId(dev_id)
+                data['dev_alias'] = i.get('alias', '无别名')
+                room_id = i.get('room_id', None)
+                data['room_name'] = '未分配'
+                if room_id:
+                    room = handle.get_room(room_id)
+                    if room:
+                        data['room_name'] = room.get('name', '未分配')
+                normal_data.append(data)
+    return HttpResponse(json.dumps(normal_data))
+
+
+@csrf_exempt
+@token_required
+def error_data(request, user_id):
+    """
+    获取异常设备
+    :param request:
+    :return:
+    """
+    room_id = request.POST.get('room_id', 0)
+    room_skip = request.POST.get('room_skip', 0)
+    room_limit = request.POST.get('room_limit', 10)
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+    error_data = []
+    for i in dev_list[0]:
+        dev_id = i.get('device_id', None)
+        if dev_id:
+            data = handle.get_hum_and_tempe_byId(dev_id)
+            data['dev_alias'] = i.get('alias', '无别名')
+            room_id = i.get('room_id', None)
+
+            data['room_name'] = '未分配'
+            if room_id:
+                room = handle.get_room(room_id)
+                if room:
+                    data['room_name'] = room.get('name', '未分配')
+            error_data.append(data)
+    return HttpResponse(json.dumps({'err_data': error_data, 'my_skip': dev_list[1] }))
+
+
+@csrf_exempt
+@token_required
+def choose_room(request, user_id):
+    dev_id = request.GET.get("devid", None)
+    if not dev_id:
+        return HttpResponseRedirect(reverse("error"))
+    db = get_db()
+    device = db.ebc_user_device.find_one({"device_id": dev_id, 'user_id': user_id})
+    return render(request, "freezer/api/chooseroom.html", locals())
+
+
+@csrf_exempt
+@token_required
+def update_room_id(request, user_id):
+    """
+    更新设备的room_id,也就是修改设备所在的房间
+    :param request:
+    :param user_id:
+    :return:
+    """
+    n = request.POST.get('flag', None)
+    device_id = request.POST.get('dev_id', None)
+    if n and device_id:
+        try:
+            db = get_db()
+            db.ebc_user_device.update({'user_id': user_id, 'device_id': device_id}, {'$set': {'room_id': ObjectId(n)}})
+        except Exception as e:
+            print(e)
+            return HttpResponse('error')
+
+    return HttpResponse("ok")
+
+
+@csrf_exempt
+@token_required
+def get_all_room(request, user_id):
+    skip = int(request.POST.get('skip', 0))
+    limit = int(request.POST.get('limit', 20))
+    db = get_db()
+    temp = db.ebc_room.find({'user_id': user_id}).sort("create_date", pymongo.ASCENDING).skip(skip).limit(limit)
+    room = []
+    for t in temp:
+        obj = dict()
+        obj["id"] = str(t["_id"])
+        obj["name"] = t["name"]
+        room.append(obj)
+    return HttpResponse(json.dumps({'res': room}))
+
+
+@csrf_exempt
+def get_device_by_id(request):
+    """
+    根据房间id查找设备，用于判断房间是否存在设备
+    :param request:
+    :return: 0-无设备，1-有设备，2-房间id不存在
+    """
+    room_id = request.POST.get('room_id', None)
+    if room_id:
+        db = get_db()
+        result = db.ebc_user_device.find_one({'room_id': ObjectId(room_id)})
+        if result:
+            return HttpResponse(json.dumps({'status': 1}))
+        else:
+            return HttpResponse(json.dumps({'status': 0}))
+    else:
+        return HttpResponse(json.dumps({'status': 2}))

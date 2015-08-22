@@ -1,0 +1,65 @@
+{% extends "freezer/api/base.tpl" %}
+{% load staticfiles %}
+{% load myfilter %}
+{% block title %}我的设备{% endblock %}
+{% block style %}
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/freezer/api/warn.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+<div class="content">
+    <div class="ui-dev-alias">
+        <h3>设备：{{ alias }}</h3>
+    </div>
+    <div class="ui-dev-num">
+        <h5><span class="dev-id">ID:{{ device_id }}</span> <span class="room-num">所属房间：{{ room_name }}</span></h5>
+    </div>
+    
+    <div class="ui-error-detail">
+        <div class="ui-error-div">{{ err_content }}
+        </div>
+        <div class="ui-date-div">报警时间：{{ current_date }}
+            <button class="show-detail"> 立即查看</button>
+        </div>
+    </div>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+ <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script>
+     //调用安卓的接口获得当前token值
+    function get_token() {
+        try {
+
+            return android.getToken();
+        } catch (e) {
+            console.log(e);
+            alert("无法获得当前Token");
+            return false
+        }
+    }
+    $(function(){
+        $(".show-detail").bind('touchstart',function(){
+            $(this).css('background-color','#0097ff')
+        });
+        $(".show-detail").bind('touchend',function(){
+            $(this).css('background-color','#0079ff')
+        });
+
+        $(".show-detail").tap(function(){
+           var devid={{ device_id }}
+           var token = get_token();
+            if(token !="") {
+
+                location.href = "http://qingke.device.53iq.com/freezer/api/device/device_detail?token=" + token + "&devid=" + devid;
+            }
+            })
+
+    })
+    </script>
+
+{% endblock %}

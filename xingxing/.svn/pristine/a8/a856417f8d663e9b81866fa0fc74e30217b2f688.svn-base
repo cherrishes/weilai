@@ -1,0 +1,51 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="COMM">/**
+<span class='line'>  2</span>  * （Required）申请权限，每个URL只调用一次
+<span class='line'>  3</span>  * @param boolean location 定位权限
+<span class='line'>  4</span>  * @param boolean notify 发送系统通知权限
+<span class='line'>  5</span>  * @param boolean vibration 震动手机权限
+<span class='line'>  6</span>  */</span><span class="WHIT">
+<span class='line'>  7</span> </span><span class="NAME">config</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">location</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">notify</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">vibration</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="COMM">/**
+<span class='line'> 10</span>  * 申请定位（异步）
+<span class='line'> 11</span>  * @author YOLANDA
+<span class='line'> 12</span>  * @param string succeed 定位成功后执行的方法，方法须包含一个参数
+<span class='line'> 13</span>  * @param string failed 定位失败后的方法，方法须包含一个参数
+<span class='line'> 14</span>  */</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="NAME">location</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">succeed</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">failed</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 17</span> </span><span class="COMM">/**
+<span class='line'> 18</span>  * 发送通知
+<span class='line'> 19</span>  * @author YOLANDA
+<span class='line'> 20</span>  * @param string title 通知的标题
+<span class='line'> 21</span>  * @param string message 通知的内容
+<span class='line'> 22</span>  */</span><span class="WHIT">
+<span class='line'> 23</span> </span><span class="NAME">notify</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">title</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">message</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 25</span> </span><span class="COMM">/**
+<span class='line'> 26</span>  * 震动手机
+<span class='line'> 27</span>  * @param long time 单位是毫秒，推荐200 - 500
+<span class='line'> 28</span>  */</span><span class="WHIT">
+<span class='line'> 29</span> </span><span class="NAME">vibration</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">time</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 30</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="COMM">/**
+<span class='line'> 32</span>  * 显示一个普通消息
+<span class='line'> 33</span>  * @author YOLANDA
+<span class='line'> 34</span>  * @param string message 消息内容
+<span class='line'> 35</span>  */</span><span class="WHIT">
+<span class='line'> 36</span> </span><span class="NAME">message</span><span class="WHIT"> </span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">message</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 37</span> </span><span class="PUNC">}</span><span class="WHIT">
+<span class='line'> 38</span> </span><span class="COMM">/**
+<span class='line'> 39</span>  * 设置标题
+<span class='line'> 40</span>  * @author YOLANDA
+<span class='line'> 41</span>  * @param string title 标题内容
+<span class='line'> 42</span>  */</span><span class="WHIT">
+<span class='line'> 43</span> </span><span class="NAME">setTitle</span><span class="PUNC">:</span><span class="KEYW">function</span><span class="PUNC">(</span><span class="NAME">title</span><span class="PUNC">)</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT">
+<span class='line'> 44</span> </span><span class="PUNC">}</span></pre></body></html>

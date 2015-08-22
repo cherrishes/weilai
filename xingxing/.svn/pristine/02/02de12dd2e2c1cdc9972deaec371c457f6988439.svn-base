@@ -1,0 +1,63 @@
+body{
+    background-color: #FBF8FA;
+}
+h5,h4,h3{
+    margin-left: 9%;
+    margin-top: 15px;
+}
+.content{
+    width: 100%;
+    height: auto;
+}
+.ui-error-detail{
+    width: 100%;
+
+
+    text-align: center;
+}
+.ui-error-div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 84%;
+    height: 150px;
+    text-align: left;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: gainsboro;
+    color: #FF8247;
+    font-size: 18px;
+    padding-left: 13px;
+}
+.ui-date-div{
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    height: 150px;
+    text-align: left;
+
+
+    color: #000000;
+    font-size: 15px;
+    margin-top: 40px;
+}
+.ui-dev-alias{
+    width: 100%;
+    height: 50px;
+}
+.ui-dev-num{
+    width: 100%;
+    height: 50px;
+}
+.room-num{
+    float: right;
+    margin-right: 16%;
+}
+.show-detail {
+    float: right;
+    width: 80px;
+    height: 30px;
+    background-color: #0079ff;
+    border-radius: 3px;
+    color: #ffffff;
+}

@@ -1,0 +1,1086 @@
+2015-07-10 16:07:24,996 [Thread-3:140401021097728] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:07:30,173 [Thread-4:140401021097728] [django.request:143] [WARNING]- Not Found: /fr
+2015-07-10 16:07:30,473 [Thread-5:140401031587584] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:07:40,093 [Thread-7:140401021097728] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:07:45,731 [Thread-10:140401031587584] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:08:39,590 [Thread-7:140523276859136] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:09:22,371 [Thread-9:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:09:24,555 [Thread-11:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:09:25,376 [Thread-13:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:09:26,020 [Thread-15:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:09:50,009 [Thread-21:140523512592128] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:17:12,561 [Thread-24:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:21:56,038 [Thread-29:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:21:59,448 [Thread-32:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:23:03,771 [Thread-36:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:31:05,721 [Thread-40:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:32:10,455 [Thread-43:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:32:28,522 [Thread-46:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:39:02,506 [Thread-49:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:40:31,686 [Thread-52:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:40:33,974 [Thread-55:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:41:19,947 [Thread-58:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:42:09,808 [Thread-61:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:42:39,765 [Thread-64:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:42:55,652 [Thread-67:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:43:39,622 [Thread-70:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:44:55,941 [Thread-73:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 16:45:30,622 [Thread-76:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:05:16,673 [Thread-149:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:07:32,215 [Thread-152:140523266369280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:09:23,450 [Thread-155:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:11:01,613 [Thread-158:140523266369280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:11:19,154 [Thread-161:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:11:46,162 [Thread-164:140523266369280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:12:53,759 [Thread-167:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:13:16,989 [Thread-170:140523266369280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:17:16,229 [Thread-185:140523494020864] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:21:16,156 [Thread-195:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:21:47,923 [Thread-198:140523523081984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-10 17:25:54,286 [Thread-210:140523512592128] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 09:24:25,044 [Thread-1:139899121063680] [django.request:143] [WARNING]- Not Found: /fr
+2015-07-13 09:24:25,519 [Thread-3:139899110573824] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 09:24:36,450 [Thread-5:139898895988480] [django.request:231] [ERROR]- Internal Server Error: /freezer/error/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 206, in error_detail
+    user_id = flag[:-12]
+TypeError: 'NoneType' object is not subscriptable
+2015-07-13 09:24:37,108 [Thread-6:139899110573824] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 09:26:03,264 [Thread-1:139950816089856] [django.request:231] [ERROR]- Internal Server Error: /freezer/error/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 212, in error_detail
+    if res:
+UnboundLocalError: local variable 'res' referenced before assignment
+2015-07-13 09:26:03,976 [Thread-3:139950816089856] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 09:26:50,546 [Thread-4:140190070548224] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:08:48,765 [Thread-1:140102987220736] [django.request:143] [WARNING]- Not Found: /freezer/error/
+2015-07-13 10:08:48,961 [Thread-3:140102906935040] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:09:00,403 [Thread-4:140102906935040] [django.request:231] [ERROR]- Internal Server Error: /freezer/warn/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 214, in warn_detail
+    device_id = res.get['device_id']
+AttributeError: 'Cursor' object has no attribute 'get'
+2015-07-13 10:09:01,114 [Thread-5:140102987220736] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:12:04,734 [Thread-1:140260807079680] [django.request:231] [ERROR]- Internal Server Error: /freezer/warn/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 214, in warn_detail
+    device_id = res.get('device_id')
+AttributeError: 'Cursor' object has no attribute 'get'
+2015-07-13 10:12:05,445 [Thread-3:140260796589824] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:12:09,408 [Thread-4:140260796589824] [django.request:231] [ERROR]- Internal Server Error: /freezer/warn/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 214, in warn_detail
+    device_id = res.get('device_id')
+AttributeError: 'Cursor' object has no attribute 'get'
+2015-07-13 10:12:09,908 [Thread-5:140260807079680] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:13:16,977 [Thread-1:139703968892672] [django.request:231] [ERROR]- Internal Server Error: /freezer/warn/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 219, in warn_detail
+    room_name=rack.get('name')
+AttributeError: 'Cursor' object has no attribute 'get'
+2015-07-13 10:13:17,702 [Thread-3:139703968892672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:17:42,381 [Thread-1:139732381972224] [django.request:231] [ERROR]- Internal Server Error: /freezer/warn/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 219, in warn_detail
+    room_name=rack.get('name')
+AttributeError: 'Cursor' object has no attribute 'get'
+2015-07-13 10:17:43,141 [Thread-3:139732371482368] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:18:28,346 [Thread-7:140521148937984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:18:57,895 [Thread-9:140521041286912] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:20:26,599 [Thread-3:139943157110528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:21:28,537 [Thread-3:140051630585600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:22:31,714 [Thread-3:140247091382016] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:22:57,032 [Thread-5:140247091382016] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:23:11,632 [Thread-6:140247091382016] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:24:14,686 [Thread-8:140247091382016] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:47:07,718 [Thread-3:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:47:09,815 [Thread-5:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 10:47:58,114 [Thread-18:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 11:38:20,730 [Thread-20:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 12:58:18,531 [Thread-22:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:35,801 [Thread-24:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:37,735 [Thread-26:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:39,536 [Thread-28:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:51,081 [Thread-34:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:53,145 [Thread-37:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:18:56,424 [Thread-40:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:29:45,178 [Thread-44:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:29:46,856 [Thread-47:140242865526528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:44:25,615 [Thread-50:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:45:07,567 [Thread-58:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:46:56,778 [Thread-61:140242865526528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:47:17,814 [Thread-64:140242865526528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:49:23,421 [Thread-67:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:50:54,418 [Thread-70:140242865526528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:52:04,523 [Thread-73:140242865526528] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:54:27,033 [Thread-82:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 13:58:31,786 [Thread-87:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:00:39,548 [Thread-94:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:01:24,986 [Thread-97:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:02:49,191 [Thread-100:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:02:51,514 [Thread-103:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:03:17,547 [Thread-106:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:04:03,012 [Thread-109:140242884097792] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:09:50,068 [Thread-112:140242493372160] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:21:05,369 [Thread-125:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:22:27,160 [Thread-132:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:27:01,599 [Thread-138:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-13 14:30:28,679 [Thread-148:140242855036672] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:57:43,501 [Thread-3:140695870367488] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:57:46,347 [Thread-5:140695870367488] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:57:59,479 [Thread-7:140695880857344] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:58:03,849 [Thread-9:140695880857344] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:58:05,217 [Thread-11:140695880857344] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 08:58:14,313 [Thread-13:140695880857344] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:42:25,166 [Thread-3:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:42:28,243 [Thread-9:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:42:48,594 [Thread-15:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:53:04,197 [Thread-22:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:53:05,980 [Thread-24:139799373543168] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:53:06,951 [Thread-26:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:53:18,915 [Thread-32:139799600318208] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:55:01,523 [Thread-35:139799373543168] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 15:55:49,852 [Thread-44:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:00:14,514 [Thread-47:139799373543168] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:05:13,531 [Thread-51:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:05:27,163 [Thread-55:139799373543168] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:05:29,246 [Thread-58:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:05:39,149 [Thread-64:139799373543168] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:05:40,720 [Thread-67:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:06:03,453 [Thread-72:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:06:27,693 [Thread-76:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:08:40,242 [Thread-80:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:09:33,063 [Thread-83:139799589828352] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:10:09,135 [Thread-86:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:15:59,694 [Thread-91:139799589828352] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:18:28,153 [Thread-98:139799629379328] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:18:48,702 [Thread-101:139799589828352] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:31:39,736 [Thread-108:139799618889472] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:33:41,086 [Thread-122:139799600318208] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:37:56,130 [Thread-127:139799363053312] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:41:06,885 [Thread-136:139799600318208] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:43:47,203 [Thread-141:139799363053312] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-14 16:45:47,724 [Thread-160:139799363053312] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:42:46,396 [Thread-4:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:44:00,074 [Thread-6:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:44:03,213 [Thread-8:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:44:31,594 [Thread-10:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:45:42,233 [Thread-12:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:45:44,746 [Thread-14:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:49:48,166 [Thread-17:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 08:50:00,957 [Thread-20:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:29:23,191 [Thread-25:139892117993216] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:29:24,148 [Thread-27:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:29:56,841 [Thread-34:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:30:26,881 [Thread-39:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:31:59,202 [Thread-41:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:32:00,751 [Thread-43:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:32:07,340 [Thread-48:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:32:27,301 [Thread-53:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:32:48,251 [Thread-55:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:32:52,517 [Thread-57:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:33:54,824 [Thread-59:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:33:59,640 [Thread-61:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:37:00,630 [Thread-63:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:37:01,458 [Thread-65:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:37:08,303 [Thread-67:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:37:50,383 [Thread-69:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:37:51,552 [Thread-71:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:38:04,411 [Thread-74:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:46:36,740 [Thread-76:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:47:06,702 [Thread-79:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:48:00,368 [Thread-81:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:51:25,667 [Thread-84:139892354803456] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:53:28,060 [Thread-87:139892117993216] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 09:56:26,222 [Thread-95:139892344313600] [django.request:231] [ERROR]- Internal Server Error: /freezer/test/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 286, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 230, in mytest
+    return render(request,"freezer/testrdy.html")
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 344, in invalid_block_tag
+    raise self.error(token, "Invalid block tag: '%s'" % command)
+django.template.base.TemplateSyntaxError: Invalid block tag: 'static'
+2015-07-15 09:56:28,373 [Thread-96:139892344313600] [django.request:231] [ERROR]- Internal Server Error: /freezer/test/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 286, in parse
+    compile_func = self.tags[command]
+KeyError: 'static'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 230, in mytest
+    return render(request,"freezer/testrdy.html")
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 288, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 344, in invalid_block_tag
+    raise self.error(token, "Invalid block tag: '%s'" % command)
+django.template.base.TemplateSyntaxError: Invalid block tag: 'static'
+2015-07-15 10:50:16,427 [Thread-118:139892344313600] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 16:32:39,901 [Thread-1:140557224781568] [django.request:143] [WARNING]- Not Found: /api/wash_detail
+2015-07-15 16:32:40,364 [Thread-3:140557214291712] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 16:56:06,323 [Thread-4:140557214291712] [django.request:143] [WARNING]- Not Found: /heater/api/water
+2015-07-15 16:56:06,740 [Thread-5:140557214291712] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-15 17:12:56,616 [Thread-7:140557224781568] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:49:59,534 [Thread-3:140591145981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:50:12,551 [Thread-5:140591145981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:55:08,568 [Thread-22:140591156471552] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:55:43,173 [Thread-25:140591145981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:55:44,968 [Thread-28:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:56:27,344 [Thread-33:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 08:58:59,289 [Thread-38:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:03:47,664 [Thread-43:140590901614336] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:07:59,515 [Thread-76:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:08:02,002 [Thread-78:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:08:05,044 [Thread-79:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:08:06,615 [Thread-80:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:08:07,798 [Thread-81:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:08:08,665 [Thread-82:140590922594048] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:17:16,236 [Thread-108:140590922594048] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:17:21,859 [Thread-111:140590901614336] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:19:58,114 [Thread-143:140590870144768] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:24:08,322 [Thread-197:140590788376320] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:15,594 [Thread-199:140590788376320] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:21,345 [Thread-201:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:22,576 [Thread-202:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:24,953 [Thread-203:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:25,042 [Thread-204:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:28,925 [Thread-205:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:29,847 [Thread-206:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:35,292 [Thread-208:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:36,376 [Thread-209:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:24:50,157 [Thread-207:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:25:22,188 [Thread-210:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:25:23,687 [Thread-211:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:25:24,612 [Thread-212:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:25:25,662 [Thread-213:140590746416896] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:55:50,451 [Thread-216:140591156471552] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:56:46,261 [Thread-235:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:56:49,537 [Thread-236:140590891124480] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 09:57:56,201 [Thread-239:140590880634624] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:58:15,983 [Thread-258:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:58:29,849 [Thread-275:140590870144768] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:58:35,175 [Thread-292:140591156471552] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:58:37,977 [Thread-309:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:59:19,818 [Thread-329:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:59:31,493 [Thread-331:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:59:45,740 [Thread-334:140590880634624] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 09:59:55,808 [Thread-351:140591156471552] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 10:00:16,535 [Thread-355:140591145981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 10:00:23,799 [Thread-362:140591145981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 10:00:25,880 [Thread-366:140590777886464] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 10:00:28,426 [Thread-368:140590777886464] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:00:44,986 [Thread-372:140590777886464] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:00:52,362 [Thread-373:140590777886464] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:10,776 [Thread-378:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 10:01:38,875 [Thread-383:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:39,881 [Thread-384:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:40,820 [Thread-385:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:41,689 [Thread-386:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:42,485 [Thread-387:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:44,248 [Thread-388:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:46,847 [Thread-389:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 10:01:47,841 [Thread-390:140590880634624] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/senddata
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/dev_list/views.py", line 116, in send_data
+    a = send(devid, t, status)
+  File "/home/rdy/workspace/xingxing/common/protocol.py", line 22, in send
+    client.connect((host, port))
+ConnectionRefusedError: [Errno 111] Connection refused
+2015-07-16 15:32:57,974 [Thread-392:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:07:16,497 [Thread-394:140590880634624] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:07:36,398 [Thread-396:140590891124480] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:07:51,056 [Thread-1:140091139331840] [django.request:143] [WARNING]- Not Found: /freezer/
+2015-07-16 16:07:51,972 [Thread-3:140091128841984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:08:02,946 [Thread-4:140091128841984] [django.request:231] [ERROR]- Internal Server Error: /freezer/download/
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 230, in download
+    return render(request)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+TypeError: render_to_string() missing 1 required positional argument: 'template_name'
+2015-07-16 16:08:04,106 [Thread-5:140091139331840] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:08:45,045 [Thread-1:140023879857920] [django.request:231] [ERROR]- Internal Server Error: /freezer/download
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 230, in download
+    return render(request)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+TypeError: render_to_string() missing 1 required positional argument: 'template_name'
+2015-07-16 16:08:46,323 [Thread-3:140023879857920] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:09:38,335 [Thread-3:140255445382912] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:10:21,304 [Thread-5:140255533115136] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:15:28,240 [Thread-23:140255424403200] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 16:15:45,816 [Thread-26:140255424403200] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 18:52:20,692 [Thread-398:140590880634624] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 18:52:32,991 [Thread-3:139649922103040] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 18:52:37,689 [Thread-16:139650009409280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 19:01:06,105 [Thread-23:139650009409280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-16 19:01:34,425 [Thread-39:139650009409280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:56:56,279 [Thread-3:139919286593280] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:57:01,873 [Thread-16:139919273981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:57:09,866 [Thread-18:139919253001984] [django.request:143] [WARNING]- Not Found: /freezer/api/
+2015-07-24 10:57:09,942 [Thread-19:139919273981696] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:57:35,288 [Thread-25:139919253001984] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:57:54,020 [Thread-31:139919263491840] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:59:00,694 [Thread-3:140264788330240] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 10:59:53,903 [Thread-3:140556597061376] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-24 11:00:37,275 [Thread-3:140688191153920] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-25 14:41:11,136 [Thread-4:140389136946944] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-25 14:41:13,922 [Thread-17:140389136946944] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-25 14:41:24,444 [Thread-21:140389039773440] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-25 14:41:48,023 [Thread-25:140389029283584] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-27 09:09:52,175 [Thread-3:139761255708416] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-07-27 09:10:01,848 [Thread-10:139761245218560] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 108, in get_device_by_room
+    my_skip = int(len(results))+int(room_skip)
+TypeError: object of type 'Cursor' has no len()
+2015-07-27 09:10:06,569 [Thread-13:139761255708416] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 108, in get_device_by_room
+    my_skip = int(len(results))+int(room_skip)
+TypeError: object of type 'Cursor' has no len()
+2015-07-27 09:33:29,115 [Thread-5:140730632759040] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 108, in get_device_by_room
+    re = db.ebc_user_device.find({'user_id': user_id}).skip(room_skip).limit(room_limit).toArray()
+AttributeError: 'Cursor' object has no attribute 'toArray'
+2015-07-27 09:36:02,321 [Thread-5:140541597579008] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 110, in get_device_by_room
+    print(re.length)
+AttributeError: 'Cursor' object has no attribute 'length'
+2015-07-27 09:36:26,169 [Thread-14:140680739403520] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 110, in get_device_by_room
+    print(re.length())
+AttributeError: 'Cursor' object has no attribute 'length'
+2015-07-27 09:37:07,337 [Thread-5:140164940572416] [django.request:231] [ERROR]- Internal Server Error: /freezer/api/device/error_data
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/util/decorators.py", line 51, in wrap
+    return func(request, val, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/views.py", line 153, in error_data
+    dev_list = handle.get_device_by_room(user_id, room_id, int(room_skip), int(room_limit), 1)
+  File "/home/rdy/workspace/xingxing/app/freezer/api/room_dev_list/room_list/handler.py", line 111, in get_device_by_room
+    my_skip = int(re)+int(room_skip)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'Cursor'
+2015-08-06 09:15:15,978 [Thread-3:139720539809536] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-08-12 18:44:54,256 [Thread-3:139745170016000] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-08-12 19:00:31,971 [Thread-4:140626488170240] [django.request:231] [ERROR]- Internal Server Error: /test
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 173, in translate_token
+    op = OPERATORS[token]
+KeyError: 'foo._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 699, in __init__
+    self.literal = float(var)
+ValueError: could not convert string to float: 'foo._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 720, in __init__
+    self.literal = mark_safe(unescape_string_literal(var))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/functional.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/text.py", line 430, in unescape_string_literal
+    raise ValueError("Not a string literal: %r" % s)
+ValueError: Not a string literal: 'foo._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 40, in test
+    return render(request, "freezer/test.html", locals())
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 974, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 906, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 164, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 175, in translate_token
+    return self.create_var(token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 909, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 573, in __init__
+    var_obj = Variable(var)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 727, in __init__
+    var)
+django.template.base.TemplateSyntaxError: Variables and attributes may not begin with underscores: 'foo._id'
+2015-08-12 19:01:16,731 [Thread-5:140626488170240] [django.request:231] [ERROR]- Internal Server Error: /test
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 173, in translate_token
+    op = OPERATORS[token]
+KeyError: 'token._id|trans_underline:"_id"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 699, in __init__
+    self.literal = float(var)
+ValueError: could not convert string to float: 'token._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 720, in __init__
+    self.literal = mark_safe(unescape_string_literal(var))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/functional.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/text.py", line 430, in unescape_string_literal
+    raise ValueError("Not a string literal: %r" % s)
+ValueError: Not a string literal: 'token._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 40, in test
+    return render(request, "freezer/test.html", locals())
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 974, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 906, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 164, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 175, in translate_token
+    return self.create_var(token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 909, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 573, in __init__
+    var_obj = Variable(var)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 727, in __init__
+    var)
+django.template.base.TemplateSyntaxError: Variables and attributes may not begin with underscores: 'token._id'
+2015-08-12 19:01:20,347 [Thread-6:140626488170240] [django.request:231] [ERROR]- Internal Server Error: /test
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 173, in translate_token
+    op = OPERATORS[token]
+KeyError: 'token._id|trans_underline:"_id"'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 699, in __init__
+    self.literal = float(var)
+ValueError: could not convert string to float: 'token._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 720, in __init__
+    self.literal = mark_safe(unescape_string_literal(var))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/functional.py", line 214, in wrapper
+    return func(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/utils/text.py", line 430, in unescape_string_literal
+    raise ValueError("Not a string literal: %r" % s)
+ValueError: Not a string literal: 'token._id'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 40, in test
+    return render(request, "freezer/test.html", locals())
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/shortcuts.py", line 50, in render
+    return HttpResponse(loader.render_to_string(*args, **kwargs),
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 170, in render_to_string
+    t = get_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 144, in get_template
+    template, origin = find_template(template_name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 132, in find_template
+    source, display_name = loader(name, dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 44, in __call__
+    return self.load_template(template_name, template_dirs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 50, in load_template
+    template = get_template_from_string(source, origin, template_name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/loader.py", line 156, in get_template_from_string
+    return Template(source, origin, name)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 132, in __init__
+    self.nodelist = compile_string(template_string, origin)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 162, in compile_string
+    return parser.parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 833, in do_for
+    nodelist_loop = parser.parse(('empty', 'endfor',))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 290, in parse
+    compiled_result = compile_func(self, token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 974, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 906, in __init__
+    super(TemplateIfParser, self).__init__(*args, **kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 164, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/smartif.py", line 175, in translate_token
+    return self.create_var(token)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/defaulttags.py", line 909, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 372, in compile_filter
+    return FilterExpression(token, self)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 573, in __init__
+    var_obj = Variable(var)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/template/base.py", line 727, in __init__
+    var)
+django.template.base.TemplateSyntaxError: Variables and attributes may not begin with underscores: 'token._id'
+2015-08-12 19:07:03,312 [Thread-1:140515451623168] [django.request:231] [ERROR]- Internal Server Error: /test
+Traceback (most recent call last):
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/core/handlers/base.py", line 111, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/rdy/workspace/python34/lib/python3.4/site-packages/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/rdy/workspace/xingxing/app/freezer/views.py", line 39, in test
+    print(i.token)
+AttributeError: 'dict' object has no attribute 'token'
+2015-08-18 09:29:33,894 [Thread-3:139741006571264] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-08-18 09:47:03,593 [Thread-103:139741017061120] [django.request:143] [WARNING]- Not Found: /favicon.ico
+2015-08-18 09:54:10,086 [Thread-8:139951924745984] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id111
+2015-08-18 09:54:17,469 [Thread-12:139951710664448] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id111
+2015-08-18 09:54:46,004 [Thread-17:139951924745984] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id111
+2015-08-18 09:54:51,329 [Thread-18:139951924745984] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id111
+2015-08-18 10:47:56,899 [Thread-41:140298831226624] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id1111
+2015-08-18 10:48:38,478 [Thread-51:140298852206336] [django.request:143] [WARNING]- Not Found: /freezer/api/device/update_room_id1111

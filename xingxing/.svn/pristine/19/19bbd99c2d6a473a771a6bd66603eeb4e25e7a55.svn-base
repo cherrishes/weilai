@@ -1,0 +1,10 @@
+from django.conf.urls import patterns, include, url
+
+from app.freezer.urls import freezer_patterns
+from app.freezer.views import test_index
+
+
+urlpatterns = patterns('',
+                       url(r'^$', test_index),
+                       url(r"^freezer/", include(freezer_patterns)),
+                       )

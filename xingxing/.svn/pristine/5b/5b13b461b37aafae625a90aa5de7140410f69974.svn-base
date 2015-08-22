@@ -1,0 +1,620 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>数据库设计 &mdash; xingxing 1.0 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="xingxing 1.0 documentation" href="index.html"/>
+        <link rel="next" title="调试与工具" href="debug.html"/>
+        <link rel="prev" title="功能需求分析" href="demand.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+          <a href="index.html" class="fa fa-home"> xingxing</a>
+        
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id3">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">数据库</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id6">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id7">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="module.html">主要模块</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id2">手机页面</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id3">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="module.html#id4">微信公众号</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rule.html">基本要求</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id2">协议服务器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rule.html#id3">手机页面</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="mobile.html">手机页面开发相关</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id2">图片的处理</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id3">移动设备上的事件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mobile.html#id4">注意事项</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">功能需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">设备列表</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">权限</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">数据库设计</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">集合结构</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">调试与工具</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#memcached">memcached可视化工具</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">项目部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">基本配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">协议服务器配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">更新到服务器</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">第三方帐号登录接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#mac">上报mac地址接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id6">获取mac地址列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#token">更新Token时间接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id11">客服电话接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id14">关于接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id17">设备列表接口</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id20">其他说明</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="updatelog.html">更新日志</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id2">2015.06.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id3">2015.06.16</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id4">2015.06.24</a></li>
+<li class="toctree-l2"><a class="reference internal" href="updatelog.html#id5">2015.06.26</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">xingxing</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>数据库设计</li>
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>数据库设计<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>基本信息<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>使用mongodb数据库</li>
+<li>主机：192.168.0.62</li>
+<li>数据库名称：ebdb_xingxing</li>
+<li>帐号：smartsys</li>
+<li>密码：smartsys.com</li>
+<li>端口号：27017</li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h2>集合结构<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>说明：</p>
+<ul class="simple">
+<li>保存到数据库的时间均用utc时间</li>
+</ul>
+<div class="section" id="ebc-user">
+<h3>ebc_user(用户集合)<a class="headerlink" href="#ebc-user" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="32%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>字符串(唯一)</td>
+<td>用户标识（类型前缀和openid拼接成）</td>
+</tr>
+<tr class="row-odd"><td>account</td>
+<td>字符串(唯一)</td>
+<td>内部帐号</td>
+</tr>
+<tr class="row-even"><td>access_token</td>
+<td>字符串</td>
+<td>第三方授权获取到的</td>
+</tr>
+<tr class="row-odd"><td>password</td>
+<td>字符串(md5 32位小写)</td>
+<td>密码</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>32位整型</td>
+<td>用户类型</td>
+</tr>
+<tr class="row-odd"><td>head_url</td>
+<td>字符串</td>
+<td>头像地址</td>
+</tr>
+<tr class="row-even"><td>nickname</td>
+<td>字符串</td>
+<td>昵称</td>
+</tr>
+<tr class="row-odd"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>补充说明</p>
+<ol class="arabic simple">
+<li>_id为帐号类型拼接上下划线和对应的openid组成的，例如QQ登录的为：1_oYazTsp2lBjzD_dNoFX17eVGIIcI，微信登录的为：2_oYazTsp2lBjzD_dNoFX17eVGIIcI、新浪微波登录的为：3_oYazTsp2lBjzD_dNoFX17eVGIIcI</li>
+<li>account为系统给第三方登录分配的帐号，默认与_id一致，后期可修改</li>
+<li>type=0表示普通用户，type=1表示QQ登录，type=2表示微信登录，type=3表示新浪微博登录</li>
+</ol>
+<p>示例数据：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;_id&quot;</span> <span class="p">:</span> <span class="s">&quot;2_oYazTsp2lBjzD_dNoFX17eVGIIcI&quot;</span><span class="p">,</span>
+  <span class="s">&quot;account&quot;</span> <span class="p">:</span> <span class="s">&quot;2_oYazTsp2lBjzD_dNoFX17eVGIIcI&quot;</span><span class="p">,</span>
+  <span class="s">&quot;access_token&quot;</span> <span class="p">:</span> <span class="s">&quot;q93INqfXP4axWtlej2QH8G_8vZ4CYlYYXNQ&quot;</span><span class="p">,</span>
+  <span class="s">&quot;password&quot;</span> <span class="p">:</span> <span class="s">&quot;e10adc3949ba59abbe56e057f20f883e&quot;</span><span class="p">,</span>
+  <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s">&quot;head_url&quot;</span> <span class="p">:</span> <span class="s">&quot;http://a.56iq.net/images/share/head.png&quot;</span><span class="p">,</span>
+  <span class="s">&quot;nickname&quot;</span> <span class="p">:</span> <span class="s">&quot;王五&quot;</span><span class="p">,</span>
+  <span class="s">&quot;create_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-05-29T06:00:51.854Z&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebc-device">
+<h3>ebc_device(设备集合)<a class="headerlink" href="#ebc-device" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="33%" />
+<col width="48%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>字符串(唯一)</td>
+<td>设备编号</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>32位整型</td>
+<td>设备类型</td>
+</tr>
+<tr class="row-even"><td>mac</td>
+<td>字符串（唯一）</td>
+<td>mac地址</td>
+</tr>
+<tr class="row-odd"><td>is_online</td>
+<td>boolean</td>
+<td>是否在线(true在线，false离线)</td>
+</tr>
+<tr class="row-even"><td>is_abandon</td>
+<td>boolean</td>
+<td>是否弃用（true弃用,false在用）</td>
+</tr>
+<tr class="row-odd"><td>err_status</td>
+<td>32位整型</td>
+<td>故障状态</td>
+</tr>
+<tr class="row-even"><td>err_date</td>
+<td>日期</td>
+<td>故障状态改变时间</td>
+</tr>
+<tr class="row-odd"><td>tag</td>
+<td>内嵌文档</td>
+<td>标签(包含ip、型号等信息)</td>
+</tr>
+<tr class="row-even"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>补充说明</p>
+<ul class="simple">
+<li>type=0表示未定义，type=1表示医疗冷柜，type=2表示商用冷柜</li>
+<li>err_status=0表示正常，err_status!=0表示异常</li>
+<li>tag中有client_ip、product_model、current_status</li>
+</ul>
+<p>示例数据:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;_id&quot;</span> <span class="p">:</span> <span class="s">&quot;10279010865051&quot;</span><span class="p">,</span>
+  <span class="s">&quot;create_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-05-29T06:00:51.854Z&quot;</span><span class="p">),</span>
+  <span class="s">&quot;err_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-05-29T06:00:51.854Z&quot;</span><span class="p">),</span>
+  <span class="s">&quot;err_status&quot;</span> <span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+  <span class="s">&quot;is_online&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+  <span class="s">&quot;is_abandon&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s">&quot;mac&quot;</span> <span class="p">:</span> <span class="s">&quot;ACCF233C84E7&quot;</span><span class="p">,</span>
+  <span class="s">&quot;tag&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;client_ip&quot;</span> <span class="p">:</span> <span class="s">&quot;101.68.70.14&quot;</span><span class="p">,</span>
+    <span class="s">&quot;product_model&quot;</span> <span class="p">:</span> <span class="s">&quot;YC-360WDFH&quot;</span><span class="p">,</span>
+    <span class="s">&quot;current_status&quot;</span><span class="p">:</span><span class="s">&quot;30|3.2|65|1|1|1|湿度传感器故障|1&quot;</span>
+  <span class="p">},</span>
+  <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebc-room">
+<h3>ebc_room(房间集合)<a class="headerlink" href="#ebc-room" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="35%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>ObjectId(唯一)</td>
+<td>编号</td>
+</tr>
+<tr class="row-odd"><td>user_id</td>
+<td>字符串</td>
+<td>用户标识（ebc_user中的_id）</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>字符串</td>
+<td>房间名称</td>
+</tr>
+<tr class="row-odd"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>示例数据：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s">&quot;5565a90a808df7fd642ec8f6&quot;</span><span class="p">),</span>
+  <span class="s">&quot;create_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-06-01T11:18:16.32Z&quot;</span><span class="p">),</span>
+  <span class="s">&quot;name&quot;</span> <span class="p">:</span> <span class="s">&quot;我的房间&quot;</span><span class="p">,</span>
+  <span class="s">&quot;user_id&quot;</span> <span class="p">:</span> <span class="s">&quot;2_oYazTsp2lBjzD_dNoFX17eVGIIcI&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebc-user-device">
+<h3>ebc_user_device(用户设备集合)<a class="headerlink" href="#ebc-user-device" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="35%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>字符串(唯一)</td>
+<td>编号</td>
+</tr>
+<tr class="row-odd"><td>user_id</td>
+<td>字符串</td>
+<td>用户标识（ebc_user中的_id）</td>
+</tr>
+<tr class="row-even"><td>mac</td>
+<td>字符串</td>
+<td>mac地址</td>
+</tr>
+<tr class="row-odd"><td>device_id</td>
+<td>字符串</td>
+<td>对应ebc_device中的_id</td>
+</tr>
+<tr class="row-even"><td>room_id</td>
+<td>ObjectId</td>
+<td>所属房间编号</td>
+</tr>
+<tr class="row-odd"><td>alias</td>
+<td>字符串</td>
+<td>别名（用户自定义设备编号）</td>
+</tr>
+<tr class="row-even"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>补充说明</p>
+<ol class="arabic simple">
+<li>一个用户对应一台设备只能有一条记录，通过用户_id和mac地址拼接来保证记录的唯一性</li>
+<li>_id由ebc_user._id拼接mac(大写)组成的唯一字符串</li>
+<li>alias对于同一用户和同一设备是唯一的</li>
+</ol>
+<p>示例数据：</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;_id&quot;</span> <span class="p">:</span> <span class="s">&quot;2_oYazTsp2lBjzD_dNoFX17eVGIIcIACCF233C84E7&quot;</span><span class="p">,</span>
+  <span class="s">&quot;room_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s">&quot;5565a90a808df7fd642ec8f6&quot;</span><span class="p">),</span>
+  <span class="s">&quot;create_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-06-19T08:14:25.96Z&quot;</span><span class="p">),</span>
+  <span class="s">&quot;mac&quot;</span> <span class="p">:</span> <span class="s">&quot;ACCF233C84E7&quot;</span><span class="p">,</span>
+  <span class="s">&quot;device_id&quot;</span> <span class="p">:</span> <span class="s">&quot;10279010865051&quot;</span><span class="p">,</span>
+  <span class="s">&quot;alias&quot;</span> <span class="p">:</span> <span class="s">&quot;110&quot;</span><span class="p">,</span>
+  <span class="s">&quot;user_id&quot;</span> <span class="p">:</span> <span class="s">&quot;2_oYazTsp2lBjzD_dNoFX17eVGIIcI&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebc-status">
+<h3>ebc_status(状态集合)<a class="headerlink" href="#ebc-status" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="37%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>ObjectId(唯一)</td>
+<td>编号</td>
+</tr>
+<tr class="row-odd"><td>type</td>
+<td>32位整型</td>
+<td>类型</td>
+</tr>
+<tr class="row-even"><td>device_id</td>
+<td>字符串</td>
+<td>设备编号</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>内嵌文档</td>
+<td>值</td>
+</tr>
+<tr class="row-even"><td>content</td>
+<td>字符串</td>
+<td>描述</td>
+</tr>
+<tr class="row-odd"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>补充说明</p>
+<ul class="simple">
+<li>type=0为未知，type=1表示普通状态数据</li>
+<li>type=1时,value的值形如:{&#8220;temperature&#8221;:25.2,&#8221;humidity&#8221;:64,&#8221;env_temperature&#8221;:26,&#8221;error&#8221;:[3,&#8221;化霜温度传感器故障&#8221;]}里面的值依次表示柜温 柜湿 环温 报警信息</li>
+</ul>
+<p>数据示例</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="p">{</span>
+  <span class="s">&quot;_id&quot;</span> <span class="p">:</span> <span class="n">ObjectId</span><span class="p">(</span><span class="s">&quot;557aa65cd798561e1d9f4de1&quot;</span><span class="p">),</span>
+  <span class="s">&quot;type&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s">&quot;device_id&quot;</span> <span class="p">:</span> <span class="s">&quot;10279010865051&quot;</span><span class="p">,</span>
+  <span class="s">&quot;value&quot;</span> <span class="p">:</span> <span class="p">{</span>
+    <span class="s">&quot;error&quot;</span> <span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="s">&quot;环境温度传感器故障&quot;</span><span class="p">],</span>
+    <span class="s">&quot;temperature&quot;</span> <span class="p">:</span> <span class="mf">3.1</span><span class="p">,</span>
+    <span class="s">&quot;env_temperature&quot;</span> <span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+    <span class="s">&quot;humidity&quot;</span> <span class="p">:</span> <span class="mf">67.7</span>
+  <span class="p">},</span>
+  <span class="s">&quot;content&quot;</span><span class="p">:</span><span class="s">&quot;&quot;</span><span class="p">,</span>
+  <span class="s">&quot;create_date&quot;</span> <span class="p">:</span> <span class="n">ISODate</span><span class="p">(</span><span class="s">&quot;2015-06-12T09:29:00.25Z&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ebc-setup">
+<h3>ebc_setup(配置集合)<a class="headerlink" href="#ebc-setup" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="18%" />
+<col width="37%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">名称</th>
+<th class="head">数据类型</th>
+<th class="head">说明</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>_id</td>
+<td>ObjectId(唯一)</td>
+<td>编号</td>
+</tr>
+<tr class="row-odd"><td>user_id</td>
+<td>字符串</td>
+<td>用户名</td>
+</tr>
+<tr class="row-even"><td>key</td>
+<td>字符串</td>
+<td>键名</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>数组</td>
+<td>键值</td>
+</tr>
+<tr class="row-even"><td>create_date</td>
+<td>日期</td>
+<td>创建时间</td>
+</tr>
+</tbody>
+</table>
+<p>补充说明</p>
+<ul class="simple">
+<li>此集合用于保存用户的配置信息，比如自定义皮肤、设备上线时是否提醒等</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="debug.html" class="btn btn-neutral float-right" title="调试与工具">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="demand.html" class="btn btn-neutral" title="功能需求分析"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, 53iq.
+    </p>
+  </div>
+
+  
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

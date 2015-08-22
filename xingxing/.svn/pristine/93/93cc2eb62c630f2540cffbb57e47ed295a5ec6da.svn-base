@@ -1,0 +1,38 @@
+freezer = {
+    notify: function (t, m, p, u) {
+        android.notify(t, m, p, u);
+    },
+    vibration: function (t) {
+        android.vibration(t);
+    },
+    message: function (m) {
+        android.message(m);
+    },
+    selectback: {},
+    showSelect: function (t, v, f) {
+        this.selectback = f;
+        android.showSelect(t, v);
+    },
+    openNewUrlWindow: function (u) {
+        android.openNewUrlWindow(u);
+    },
+    rbtncallback: {},
+    setRightButton: function (t, f) {
+        this.rbtncallback = f;
+        android.setRightButton(t);
+    },
+    rbtnokback: {},
+    showRightOk: function (f) {
+        this.rbtnokback = f;
+        android.showRightOk();
+    },
+    closeWindow: function (b) {
+        android.closeWindow(b);
+    },
+    setBackEnable: function(b) {
+        android.setBackEnable(b);
+    },
+	getAppVersion: function() {
+		return android.getAppVersion();
+	}
+};

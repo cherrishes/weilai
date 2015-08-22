@@ -1,0 +1,731 @@
+/**
+ * Created by rdy on 5/4/15.
+ */
+//全局变量配置对象
+var urlconf = {
+    //添加房间
+    //addroom: add_room,
+    add_room: "/freezer/add_room/",
+    //获取异常设备
+    error_data: "/freezer/api/device/error_data",
+    //获取所有设备
+    normal_data: "/freezer/api/device/normal_data",
+    //修改别名
+    "update_device_alias": "/freezer/update_device_alias/",
+    //获取图表数据
+    "get_chart_data": "/freezer/api/device/get_total",
+    //检查房间是否存在设备
+    "check_is_exists_device": '/freezer/api/device/get_device_by_id',
+    //删除房间
+    "delete_room": "/freezer/delete_room/",
+    //删除设备
+    "delete_dev": "/freezer/delete_dev/",
+    //加载房间列表
+    "get_extra_room": '/freezer/api/device/get_extra_room',
+    device_detail: "/freezer/api/device/device_detail",
+    imgTriangleNormal: sanjiao_nomal_src,
+    imgTriangleGray: sanjiao_press_src
+};
+$(function () {
+    //标识当前显示的列表：0->房间列表；1->所有设备列表；2->错误设备列表
+    var current_list = 1;
+    var room_delete;
+
+    //判断是否滚动到底部
+    var loading = false;
+    /** 绘制canvas饼图
+     * dataA为正常设备台数
+     * dataB为异常设备台数
+     * reduis为圆的半径
+     */
+    function drawCircle(dataA, dataB, reduis) {
+        var a = parseInt(dataA) * 1.0 / (parseInt(dataA) + parseInt(dataB)) * 100;
+        var b = 100 - a;
+        var color = ["#43CD80", "#FF6347"];
+        var data = [a, b];
+        var canvas = document.getElementById("device-pie");
+        var ctx = canvas.getContext("2d");
+        var startPoint = 1.5 * Math.PI;
+        for (var i = 0; i < data.length; i++) {
+            ctx.fillStyle = color[i];
+            ctx.strokeStyle = color[i];
+            ctx.beginPath();
+            ctx.moveTo(240, 250);
+            ctx.arc(240, 250, reduis, startPoint, startPoint - Math.PI * 2 * (data[i] / 100), true);
+            ctx.fill();
+            ctx.stroke();
+            startPoint -= Math.PI * 2 * (data[i] / 100);
+        }
+        ctx.fillStyle = "#43CD80";
+        ctx.font = "20pt Calibri";
+        ctx.strokeStyle = "#43CD80";
+        ctx.fillText('正常运行：' + dataA + "台", 360, 40);
+        ctx.fillStyle = "#FF6347";
+        ctx.strokeStyle = "#FF6347";
+        ctx.fillText('异常运行：' + dataB + "台", 360, 80);
+    }
+
+    //从url中获取参数
+    function GetUrlValueByParas(url, paras) {
+        var paraString = url.substring(url.indexOf("?") + 1, url.length).split("&");
+        var paraObj = {};
+        var i, j;
+        for (i = 0; j = paraString[i]; i++) {
+            paraObj[j.substring(0, j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=") + 1, j.length);
+        }
+        var returnValue = paraObj[paras.toLowerCase()];
+        if (typeof (returnValue) == "undefined") {
+            return "";
+        } else {
+            return returnValue;
+        }
+    }
+
+    //显示添加房间对话框
+    Zepto(".add-room").on('tap', function () {
+        var room_add = prompt('添加房间');
+        var flag = false;
+        while (room_add != null && !flag) {
+            flag = add_room(room_add);
+            if (flag == false) {
+                room_add = prompt('添加房间', room_add);
+            } else {
+                break;
+            }
+        }
+    });
+
+    //调用安卓的接口显示消息弹框
+    function msg(m) {
+        try {
+            android.message(m);
+        } catch (e) {
+            console.log(e);
+            alert(m);
+        }
+    }
+
+    // 添加房间
+    function add_room(room_name) {
+        if (room_name.length == 0 || room_name.indexOf(' ') != -1) {
+            msg('房间名不能为空！');
+            return false;
+        }
+        else if (room_name.TextFilter() != room_name) {
+            msg('房间名不能包含特殊字符！');
+
+            return false;
+        }
+        else if (room_name.length > 20) {
+            msg('房间名长度1～20字！');
+            return false;
+        }
+        else {
+            // 从当前url获取token
+            var href = window.location.href;
+            var token = GetUrlValueByParas(href, 'token');
+
+            $.post(urlconf.add_room, {'room_name': room_name, 'token': token}, function (response) {
+                if (response.status == 1) {
+                    Zepto.tips({
+                        content: '添加成功！',
+                        stayTime: 1500,
+                        type: 'success'
+                    });
+                    var html = '<li class="ui-add-room">' +
+                        '<div class="aroom list-group-item" id="' + response.room_id + '">' + room_name + '(0)</div>' +
+                        '<div class="ui-del-room"><div class="ui-del-room-img"></div></div></li>';
+                    $('#allroom-ul').append(html);
+
+                    //为新添加的房间绑定删除回调函数
+                    Zepto(".ui-del-room").bind('touchstart',function(){
+                    $(this).css('background-color','Silver');
+
+                    });
+                    Zepto(".ui-del-room").bind('touchend',function(){
+                     $(this).css('background-color','white');
+
+                    });
+                    Zepto(".ui-del-room").bind('tap',function(){
+                    var _id = $(this).parent().children().attr("id");
+                    var name = $(this).parent().children().text();
+                    delete_room_callback(_id,name);
+
+                    event.stopPropagation();
+                    });
+                    Zepto(".aroom").on("singleTap", function () {
+                        $("#room-Num").text($(this).text());
+                        $("#allroom-ul").toggle();
+                        $("#sanjiao").attr('src', urlconf.imgTriangleNormal);
+                        $(".ui-border-t").show();
+                    });
+                } else {
+                    msg('房间名已存在！');
+                    var room_add = prompt('添加房间',room_name);
+                    var flag = false;
+                    while (room_add != null && !flag) {
+                     flag = add_room(room_add);
+            if (flag == false) {
+                room_add = prompt('添加房间', room_add);
+            } else {
+                break;
+            }
+        }
+                    /*
+                    Zepto.tips({
+                        content: response.error,
+                        stayTime: 1500,
+                        type: 'warn'
+                    });*/
+                }
+            }, 'json');
+            Zepto('#txtRoomName').val('');
+            return true;
+        }
+    }
+
+    String.prototype.TextFilter = function () {
+        var pattern = new RegExp("[`~%!@#^=''?~！@#￥……&——‘”“'？*()（），,。.、]"); //[]内输入你要过滤的字符，这里是我的
+        var rs = "";
+        for (var i = 0; i < this.length; i++) {
+            rs += this.substr(i, 1).replace(pattern, '');
+        }
+        return rs;
+    };
+    var isNeedPrompt = true;
+    //绑定设备列表事件
+    function bindListEvents() {
+        //删除加载时候出现的loading图标
+        $('.ui-loading-wrap').remove();
+    //删除设备
+
+        Zepto(".ui-delete-dev").bind('touchstart',function(){
+                    $(this).css('background-color','Silver');
+
+                    });
+                    Zepto(".ui-delete-dev").bind('touchend',function(){
+                     $(this).css('background-color','white');
+
+                    });
+    Zepto(".ui-delete-dev").bind("singleTap",function(){
+
+
+        d_id=$(this).parent().attr('id');
+        dev_name = $(this).parent().attr('data-alias');
+        dev_delete= confirm('确定要删除 ' + dev_name + ' ?');
+        if (dev_delete) {
+
+                    delete_dev(d_id);
+                } else {
+
+                }
+
+        event.stopPropagation();
+
+    });
+
+        $(".ui-border-dev").on("singleTap", function () {
+            var t = ($(this).attr('id'));
+            var access_token = GetUrlValueByParas(location.href, "token");
+            $(this).css("background", "#ededed");
+            setTimeout(function () {
+                $(".ui-border-dev").css("background", "#ffffff");
+                location.href = urlconf.device_detail+"?token=" + access_token + "&devid=" + t;
+            }, 500);
+
+        });
+
+        // 更新设备编号触发事件绑定
+        $(".ui-border-t").on("longTap", function (e) {
+            if (isNeedPrompt) {
+                var device_alias = $(this).attr('data-alias');
+                var device_id = $(this).attr('id');
+                var room_update = prompt('修改编号(1~14位数字)', device_alias);
+                var flag = false;
+                while (room_update != null  && !flag) {
+                    flag = update_device_alias(room_update, device_id);
+                    if(!flag){
+                        room_update = prompt('修改编号(1~14位数字)', device_alias);
+                    }else{
+                        break;
+                    }
+                }
+                isNeedPrompt = false;
+            } else {
+                //解决长按事件多次触发导致prompt弹出多个的问题
+                setTimeout(function () {
+                    isNeedPrompt = true;
+                }, 500);
+            }
+            return false
+
+        });
+        loading = false;
+    }
+
+    //请求异常设备列表
+    function getErrorDevice(isMerge, _id, isNeed) {
+        if (typeof(isMerge) == "undefined") {
+            isMerge = false;
+        }
+        if (!isMerge) {
+            $("#mydevicelist").html("");
+        }
+        var room_id = 0;
+        if (typeof(_id) == 'undefined') {
+            room_id = 0;
+        } else {
+            room_id = _id;
+        }
+
+        if (typeof(isNeed) == "undefined") {
+            isNeed = false;
+        }
+        var skip = $("#mydevicelist").children('li').length;
+        var el;
+        var href = window.location.href;
+        var token = GetUrlValueByParas(href, 'token');
+
+        $.ajax({
+            type: "POST",
+            url: urlconf.error_data,
+            data: {'room_id': room_id, 'room_skip': skip, 'room_limit': 10, 'token': token},
+            dataType: "json",
+            beforeSend: function () {
+                loading = true;
+                if (isNeed) {
+                    el = $.loading({
+                        content: '加载中...'
+                    })
+                }
+            },
+            success: function (res) {
+                try {
+                    var html = '';
+                    if (res.length == 0) {
+                        html = '<div class="ui-loading-wrap"><p>没有更多设备了...</p></i></div>';
+                        $("#mydevicelist").append(html);
+                    } else {
+                        $.each(res, function (index, item) {
+                            var dev_status = item['dev_status'];
+                            html += "<li class='ui-border-t ui-border-dev ui-border-ok' data-alias='" + item['dev_alias'] + "' id='" + item['dev_id'] + "'>";
+                            if (dev_status == 0) {
+                                html += "<div  class='ui-tips ui-tips-success'><i></i>正常</div>";
+                            } else if (dev_status == 1) {
+                                html += "<div class='ui-tips'><i></i>异常</div>";
+                            } else if (dev_status == 2) {
+                                html += "<div class='ui-tips ui-tips-outline'><i></i>离线</div>";
+                            }
+                            html += "<div class='ui-list-info'><h4 class='ui-nowrap'>" + item['dev_product_model'] + "</h4>" +
+                            "<p class='ui-nowrap ui-alias'><span id='1" + item['dev_id'] + "'>" + item['dev_alias'] +
+                            "</span>&nbsp&nbsp<span>" + item['room_name'] + " </span></p>";
+                            if (dev_status == 0 || dev_status == 1) {
+                                html += "<span class='ui-nowrap ui-wen' >" +
+                                "<b>柜温" + item['dev_data']['temp'] + "°C</b>" +
+                                "<b>柜湿" + item['dev_data']['humidity'] + "%</b>" +
+                                "<b>环温" + item['dev_data']['env_temp'] + "°C</b>" +
+                                "</span>";
+                            } else {
+                                html += "<span class='ui-nowrap ui-wen-error' >" +
+                                "<b>柜温 - </b>" +
+                                "<b>柜湿 - </b>" +
+                                "<b>环温 - </b>" +
+                                "</span>";
+                            }
+                            html += "</div>" +"<div class='ui-delete-dev'><div class='ui-del-dev'></div></div>"+
+                            "</li>"
+
+
+                        });
+                    }
+                    $(".ui-border-tb").append(html);
+                    bindListEvents();
+                }
+                catch (e) {
+                    alert(e);
+                }
+                if (isNeed) {
+                    el.loading("hide");
+                }
+            }
+        });
+    }
+
+    //请求正常设备列表
+    function getNormalDevice(isMerge, _id, isNeed) {
+        if (typeof(isMerge) == "undefined") {
+            isMerge = false;
+        }
+        if (!isMerge) {
+            $("#mydevicelist").html("");
+        }
+        var room_id = 0;
+        if (typeof(_id) == 'undefined') {
+            room_id = 0;
+        } else {
+            room_id = _id;
+        }
+
+        if (typeof(isNeed) == "undefined") {
+            isNeed = false;
+        }
+        var skip = $("#mydevicelist").children('li').length;
+        var elNormal;
+
+        var href = window.location.href;
+        var token = GetUrlValueByParas(href, 'token');
+        $.ajax({
+            type: "POST",
+            url: urlconf.normal_data,
+            data: {'room_id': room_id, 'room_skip': skip, 'room_limit': 10, 'token': token},
+            dataType: "json",
+            beforeSend: function () {
+                loading = true;
+                if (isNeed) {
+                    elNormal = $.loading({
+                        content: '加载中...'
+                    })
+                }
+            },
+            success: function (data) {
+                try {
+                    var html = "";
+                    if (data.length == 0) {
+                        html = '<div class="ui-loading-wrap"><p>没有更多设备了...</p></i></div>'
+                    } else {
+                        $.each(data, function (index, item) {
+                            var dev_status = item['dev_status'];
+                            html += "<li class='ui-border-t ui-border-dev ui-border-ok' id='" + item['dev_id'] + "' data-alias='" + item["dev_alias"] + "'>";
+                            if (dev_status == 0) {
+                                html += "<div  class='ui-tips ui-tips-success'><i></i>正常</div>";
+                            } else if (dev_status == 1) {
+                                html += "<div class='ui-tips'><i></i>异常</div>";
+                            } else if (dev_status == 2) {
+                                html += "<div class='ui-tips ui-tips-outline'><i></i>离线</div>";
+                            }
+                            html += "<div class='ui-list-info'><h4 class='ui-nowrap'>" + item['dev_product_model'] + "</h4>" +
+                            "<p class='ui-nowrap ui-alias'><span id='1" + item['dev_id'] + "'>" + item['dev_alias'] +
+                            "</span>&nbsp&nbsp<span>" + item['room_name'] +
+                            " </span></p>";
+                            if (dev_status == 0 || dev_status == 1) {
+                                html += "<span class='ui-nowrap ui-wen'>" +
+                                "<b>柜温" + item['dev_data']['temp'] + "°C</b>" +
+                                "<b>柜湿" + item['dev_data']['humidity'] + "%</b>" +
+                                "<b>环温" + item['dev_data']['env_temp'] + "°C</b>" +
+                                "</span>";
+                            } else {
+                                html += "<span class='ui-nowrap ui-wen-error'>" +
+                                "<b>柜温 - </b>" +
+                                "<b>柜湿 - </b>" +
+                                "<b>环温 - </b>" +
+                                "</span>";
+                            }
+                            html += "</div>"+"<div class='ui-delete-dev'><div class='ui-del-dev'></div></div>"+"</li>";
+
+
+
+                        });
+                    }
+                    $(".ui-border-tb").append(html);
+                    bindListEvents();
+                }
+                catch (e) {
+                    alert(e);
+                }
+                if (isNeed) {
+                    elNormal.loading("hide");
+                }
+            }
+        });
+    }
+    var href = window.location.href;
+    var token = GetUrlValueByParas(href, 'token');
+    //加载图表数据
+    $.ajax({
+        type: "POST",
+        url: urlconf.get_chart_data,
+        data: {"flag": "tl", 'token': token},
+        dataType: "json",
+        success: function (data) {
+            var noaldev = parseInt(data[0].normal);
+            var errordev = parseInt(data[1].error);
+            var toaldev = noaldev + errordev;
+            $("#dev-Num").text(toaldev);
+            $("#roomNum").text(toaldev);
+            drawCircle(noaldev, errordev, 150);
+            //请求异常设备列表
+            if (GetUrlValueByParas(location.href, "type") == '2') {
+                $("#room-Num").css('color', 'black');
+                $("#error-devNum").css('color', '#1C86EE');
+                $(".add-room-div").hide();
+                getErrorDevice(false, 0, true);
+            }
+            else {
+                getNormalDevice(false, 0, true);
+            }
+        }
+    });
+    //点击异常设备tab时加载异常设备
+    $("#p2").on("tap", function () {
+        var room_id = $("#room-Num").attr('value');
+        getErrorDevice(false, room_id, true);
+        current_list = 2;
+    });
+
+    //点击列表头
+    Zepto(".room-list").on("tap", function () {
+        $("#room-Num").css('color', '#1C86EE');
+        $("#error-devNum").css('color', 'black');
+        $("#allroom-ul").toggle();
+
+        if ($("#allroom-ul").css("display") == "none") {
+            $(".ui-border-t").show();
+            $(".add-room-div").hide();
+            current_list = 1;
+        } else {
+            $(".ui-border-t").hide();
+            $(".add-room-div").show();
+            current_list = 0;
+        }
+        if ($("#sanjiao").attr('src') == urlconf.imgTriangleNormal) {
+            $("#sanjiao").attr('src', urlconf.imgTriangleGray)
+        }
+        else {
+            $("#sanjiao").attr('src', urlconf.imgTriangleNormal)
+        }
+    });
+
+
+    //点击房间事件
+    Zepto("#allroom-ul").delegate(".aroom", "tap", function (e) {
+        var name = $(this).text();
+        if (name != null) {
+            var arr = name.split('(');
+            if (arr[0].length > 6) {
+                name = arr[0].substring(0, 6) + '...(' + arr[1];
+            }
+        }
+        $("#room-Num").text(name);
+        $("#allroom-ul").toggle();
+        $("#sanjiao").attr('src', urlconf.imgTriangleNormal);
+        current_list = 1;
+        var room_id = $(this).attr('id');
+        $("#room-Num").attr('value', room_id);
+        getNormalDevice(false, room_id, true);
+        $(".ui-border-t").show();
+    });
+
+
+    //删除房间的回调函数
+    function delete_room_callback(_id,name) {
+
+
+        $.post(urlconf.check_is_exists_device, {'room_id': _id}, function (data) {
+            if (data.status == 0) {
+                room_delete = confirm('确定要删除 ' + name + ' ?');
+                if (room_delete) {
+                    delete_room(_id);
+                } else {
+                    delete_cancel();
+                }
+            } else if (data.status == 1) {
+                alert('不能删除有设备的房间');
+                delete_cancel();
+            } else {
+                alert('房间编号错误');
+            }
+        }, 'json');
+    }
+
+
+    //绑定删除房间按钮回调函数
+    Zepto(".ui-del-room").bind('touchstart',function(){
+        $(this).css('background-color','Silver');
+
+    });
+    Zepto(".ui-del-room").bind('touchend',function(){
+        $(this).css('background-color','white');
+
+    });
+    Zepto(".ui-del-room").bind('tap',function(){
+        var _id = $(this).parent().children().attr("id");
+        var name = $(this).parent().children().text();
+        delete_room_callback(_id,name);
+       // alert($(this).parent().children().text());
+        event.stopPropagation();
+    });
+    //获取滚动条高度
+    function getScrollTop() {
+        var scrollTop = 0;
+        if (document.documentElement && document.documentElement.scrollTop) {
+            scrollTop = document.documentElement.scrollTop;
+        }
+        else if (document.body) {
+            scrollTop = document.body.scrollTop;
+        }
+        return scrollTop;
+    }
+
+    //加载房间列表
+    function loadRoom() {
+        $('.ui-loading-wrap').remove();
+        $('#allroom-ul').append('<div class="ui-loading-wrap"><p>加载中</p><i class="ui-loading"></i></div>');
+        loading = true;
+        var total = $('#allroom-ul').children('li').length - 1;
+        var token=GetUrlValueByParas(location.href,"token");
+        $.post(urlconf.get_extra_room+"?token="+token, {'total': total}, function (data) {
+            $('.ui-loading-wrap').remove();
+            $('#allroom-ul').append(data);
+            loading = false;
+        });
+    }
+
+    //加载设备列表
+    function loadDevice() {
+        $("#mydevicelist").append('<div class="ui-loading-wrap">' +
+        '<p>加载中</p><i class="ui-loading"></i></div>');
+        var room_id = $('#room-Num').attr('value');
+        getNormalDevice(true, room_id);
+    }
+
+    //加载异常设备列表
+    function loadErrorDevice() {
+        $("#mydevicelist").append('<div class="ui-loading-wrap">' +
+        '<p>加载中</p><i class="ui-loading"></i></div>');
+        var room_id = $('#room-Num').attr('value');
+        getErrorDevice(true, room_id);
+    }
+
+    Zepto(document).scroll(function () {
+        var top = getScrollTop();
+        var doc = $(document).height();
+        var win = $(window).height();
+        if (top > win / 2) {
+            $('.ui-scroll-top').show();
+        } else {
+            $('.ui-scroll-top').css('display', 'none');
+        }
+        if (!loading && doc - win > 0) {
+            if (top >= doc - win) {
+                if (current_list == 0) {
+                    loadRoom();
+                } else if (current_list == 1) {
+                    if (GetUrlValueByParas(location.href, "type") == '2') {
+                        loadErrorDevice();
+                    } else {
+                        loadDevice();
+                    }
+                } else if (current_list == 2) {
+                    loadErrorDevice();
+                }
+            }
+        }
+    });
+
+    //滚动到顶部
+    Zepto('.ui-scroll-top').on('tap', function () {
+        document.body.scrollTop = 0;
+    });
+
+    Zepto(".error-dev").on("tap",
+        function () {
+            $("#room-Num").css('color', 'black');
+            $("#error-devNum").css('color', '#1C86EE');
+            $("#allroom-ul").hide();
+            $(".ui-border-ok").hide();
+            $(".add-room-div").hide();
+            if ($("#error-sanjiao").attr('src') == urlconf.imgTriangleNormal) {
+                $("#error-sanjiao").attr('src', urlconf.imgTriangleGray);
+                $(".ui-border-error").show();
+            }
+            else {
+                $("#error-sanjiao").attr('src', urlconf.imgTriangleNormal);
+                $(".ui-border-error").hide();
+            }
+        });
+
+    //删除取消
+    function delete_cancel() {
+        $('.ui-add-room').each(function () {
+            $(this).children('div').css('margin-left', '0px');
+        });
+    }
+
+    //修改设备别名
+    function update_device_alias(dev_alias, device_id) {
+        if (!/^\d{1,14}$/gi.test(dev_alias)) {
+            msg('设备编号必须为1~14位数字！');
+            return false;
+        }
+        else {
+            $("#1" + device_id).text(dev_alias);
+            var href = window.location.href;
+            var token = GetUrlValueByParas(href, 'token');
+            $.ajax({
+                type: "POST",
+                url: urlconf.update_device_alias,
+                data: {'dev_alias': dev_alias, 'dev_id': device_id, 'token': token},
+                dataType: "json",
+                success: function (data) {
+                    msg(data['msg']);
+                    Zepto('#txtDevNum').val('');
+                }
+
+            });
+            return true;
+        }
+    }
+
+    //删除房间
+    function delete_room(_id) {
+        var href = window.location.href;
+        var token = GetUrlValueByParas(href, 'token');
+        $.ajax({
+            type: "POST",
+            url: urlconf.delete_room,
+            data: {'_id': _id, 'token': token},
+            dataType: "json",
+            success: function (data) {
+                if (data['r'] == '1') {
+                    /*Zepto.tips({
+                        content: '删除成功！',
+                        stayTime: 1500,
+                        type: 'success'
+                    });*/
+                    msg('删除成功！');
+                    $("#" + _id).parent().remove();
+                } else {
+                    /*Zepto.tips({
+                        content: '删除失败！',
+                        stayTime: 1500,
+                        type: 'warn'
+                    });*/
+                    msg('删除失败！');
+                }
+            }
+        });
+    }
+
+     //删除设备
+    function delete_dev(_id) {
+        var href = window.location.href;
+        var token = GetUrlValueByParas(href, 'token');
+        $.ajax({
+            type: "POST",
+            url: urlconf.delete_dev,
+            data: {'dev_id': _id, 'token': token},
+            dataType: "json",
+            success: function (data) {
+                if (data['r'] == '1') {
+
+                    msg('删除成功！');
+                    location.reload();
+
+                } else {
+
+                    msg('删除失败！');
+                }
+            }
+        });
+    }
+});

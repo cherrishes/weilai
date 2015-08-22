@@ -1,0 +1,241 @@
+{% extends "freezer/api/base.tpl" %}
+{% load staticfiles %}
+{% block title %}{{ dev_id }}{% endblock %}
+
+{% block style %}
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/freezer/api/devlist.css' %}?v=1"/>
+    <style>
+        .ui-tab-content {
+            margin-top: 15px;
+        }
+
+        .dev-model {
+            padding-top: 15px;
+            padding-bottom: 10px;
+        }
+
+        #spanDeviceAlias {
+            float: right;
+            padding-right: 20px;
+        }
+
+        #spanDeviceAlias a {
+            color: #187AE9;
+        }
+
+        #imgEditDeviceId {
+            vertical-align: middle;
+        }
+
+        #modelText {
+            width: 100px;
+        }
+
+        #room-sel {
+            color: #187AE9;
+        }
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="dev-model">
+        <input id="modelText" type="text" value="{{ mode }}" readonly>
+        <span id="spanDeviceAlias">
+            <a>{{ device.alias }}</a>
+            <img id="imgEditDeviceId" src="{% static 'img/freezer/list_edit.png' %}" width="20px" height="20px">
+        </span>
+    </div>
+    <ul id="tab">
+        <li>
+            柜温<span id="temperature">{{ status_arr.1 }}℃</span>
+        </li>
+
+        <li>
+            柜湿<span id="humidity">{{ status_arr.2 }}%</span>
+        </li>
+
+        <li>
+            环温<span id="htemp">{{ status_arr.0 }}℃</span>
+        </li>
+    </ul>
+    <div id="warn">
+        <div id="warndivText">
+            <input type="text" id="warnText" value="{{ status_arr.6|safe }}" readonly>
+        </div>
+        <div class="warndivBtn">
+            <button id="warnBtn" style="display: none" class="btn-warning"> {{ alert }}
+            </button>
+        </div>
+    </div>
+
+    <ul class="ui-list-text ui-room" style="margin: 24px 0 1px 0;border-bottom: 17px solid #F4F8FC;height: 44px;">
+        <li class="border-r" style="text-indent: 0.5em;height: 35px;line-height: 35px;">
+            <span>所属房间</span>
+            <a id="room-sel"></a>
+            <img id="edit-img" src="{% static 'img/freezer/list_edit.png' %}" width="20px" height="20px">
+        </li>
+        <li class="border">
+            <div class="ui-form-item-switch ui-border-b">
+            <span class="inLight">
+                箱内灯
+            </span>
+                <label class="ui-switch" style="display: none;">
+                    {#                <input id="light-check" type="checkbox" {{ checked }}/>#}
+                    <img id="light-check" src="{% static 'img/freezer/close.png' %}" height="39">
+                </label>
+            </div>
+        </li>
+    </ul>
+
+
+    <div class="content">
+        <div class="ui-tab">
+            <ul class="ui-tab-nav ui-border-b ui-tab-wendu">
+                <li class="current">柜温</li>
+                <li>柜湿</li>
+                <li>环温</li>
+            </ul>
+            <ul class="ui-tab-content" style="width: 300%;">
+                <li>
+                    <div class="Datediv">
+
+                        <div id="currentDate" style=""></div>
+                        <div id="exchange">
+                            <img class="guiwen-listshow listshow"
+                                 src="{% static 'img/freezer/list_graph-rise_bule.png' %}">
+                            <img class="guiwen-tableshow tableshow "
+                                 src="{% static 'img/freezer/list_list2_bule.png' %}">
+                        </div>
+
+                    </div>
+                    <div class="ui-list ui-list-link ui-border-b" style="margin-top: -35px;">
+
+                        <div>
+                            <div id="temperature-gui" style="min-width: 100%; height: 300px; margin: 0 auto"></div>
+                        </div>
+                        <div>
+                            <table class="table table-g table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th width="50%">时间</th>
+                                    <th>柜温</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody-guiwen">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </li>
+                <li>
+                    <div class="Datediv">
+                        <div id="currentDate2" style=""></div>
+                        <div id="exchange">
+                            <img class="humidity-listshow listshow"
+                                 src="{% static 'img/freezer/list_graph-rise_bule.png' %}" width="30">
+                            <img class="humidity-tableshow tableshow"
+                                 src="{% static 'img/freezer/list_list2_bule.png' %}" width="30">
+                        </div>
+                    </div>
+                    <div class="ui-list ui-list-text ui-border-b" style="margin-top: -35px;">
+                        <div>
+                            <div id="freezer-humidity" style="min-width: 300px; height: 300px; margin: 0 auto"></div>
+                        </div>
+                        <div style="width: 100%;">
+                            <table class="table table-shi table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th width="50%">时间</th>
+                                    <th>湿度</th>
+
+                                </tr>
+                                </thead>
+                                <tbody id="tbody-humidity">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="Datediv">
+
+                        <div id="currentDate3" style=""></div>
+                        <div id="exchange">
+                            <img class="huanwen-listshow listshow"
+                                 src="{% static 'img/freezer/list_graph-rise_bule.png' %}">
+                            <img class="huanwen-tableshow tableshow"
+                                 src="{% static 'img/freezer/list_list2_bule.png' %}">
+                        </div>
+                    </div>
+                    <div class="ui-list ui-list-link ui-border-b" style="margin-top: -35px;">
+                        <div>
+                            <div id="temperature-huan" style="min-width: 300px; height: 300px; margin: 0 auto"></div>
+                        </div>
+                        <div style="width: 100%;">
+
+                            <table class="table table-h table-bordered table-striped">
+                                <thead>
+                                <tr>
+                                    <th width="50%">时间</th>
+                                    <th>环温</th>
+                                </tr>
+                                </thead>
+                                <tbody id="tbody-huanwen">
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{% block script %}
+
+    <script>
+        try {
+            //显示app左上角返回按钮
+            android.setBackEnable(true);
+        } catch (e) {
+            console.log(e);
+        }
+        var list_nomal_src = "{% static 'img/freezer/list_graph-rise.png' %}";
+        var list_press_src = "{% static 'img/freezer/list_graph-rise_bule.png' %}";
+        var table_nomal_src = "{% static 'img/freezer/list_list2_bule.png' %}";
+        var table_press_src = "{% static 'img/freezer/list_list2.png' %}";
+
+        var light_open = "{% static 'img/freezer/open.png' %}";
+        var light_close = "{% static 'img/freezer/close.png' %}";
+    </script>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+    <script src="{% static 'highcharts/highcharts.js' %}"></script>
+    <script src="{% static 'orbited/Orbited.js' %}"></script>
+    <script src="{% static 'orbited/stomp.js' %}"></script>
+    {# 解决静态文件内置到apk后的comet跨域问题 #}
+    {#    <script src="/static/orbited/Orbited.js"></script>#}
+    {#    <script src="/orbited/stomp.js"></script>#}
+    <script>
+        //设备id
+        var devid = "{{ dev_id }}";
+        //报警状态
+        var buzzing_flag_init = parseInt("{{ alert_val }}");
+        //箱内灯状态
+        var light_flag = parseInt("{{ status_arr.3 }}"); //0表示灯熄灭, 1表示灯打开
+    </script>
+    <script src="{% static 'js/freezer/api/detail.js' %}"></script>
+{% endblock %}

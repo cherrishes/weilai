@@ -1,0 +1,49 @@
+{% extends "freezer/api/base.tpl" %}
+{% load staticfiles %}
+{% block title %}选择房间{% endblock %}
+
+{% block style %}
+    <meta http-equiv="cache-control" content="no-cache">
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/freezer/api/choose.css' %}?v=1"/>
+    <style>
+        .ui-scroll-top {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            z-index: 99;
+            display: none;
+            width: 25px;
+            height: auto;
+            text-align: center;
+        }
+
+        h4 {
+            line-height: 35px;
+        }
+
+    </style>
+
+{% endblock %}
+
+{% block content %}
+    <div class="content">
+        <p>
+        <ul class="ui-list ui-list-text ui-list-link" id="ui-border-b1">
+
+        </ul>
+        </p>
+    </div>
+    <div class="ui-scroll-top"><img src="{% static 'img/freezer/pgup.png' %}" width="35" height="35"></div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        var devid = "{{ dev_id }}";
+        var roomid = "{{ device.room_id }}";
+    </script>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'js/jsapi.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script src="{% static 'js/freezer/api/chooseroom.index.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+目录结构
+Protobuf2.6.1
+   src
+       proto.exe
+   java
+       protobuf的java源码
+   python
+       protobuf的python源码
+
+编译方法:
+
+1、首先把protoc.exe文件放在src文件夹
+
+2、Java编译方法：(需安装JDK)
+   安装maven后，在命令行模式下进入Protobuf2.6.1/java下，使用mvn install或者mvn package编译Protobuf for java
+   编译完成后，在java下的target下会产生一个protobuf2.6.1.jar的文件，直接引入项目即可
+
+3、Python编译的方法：(需安装Python)
+   在命令行模式下，进入protobuf2.6.1/python下，使用python setup.py build编译，命令执行完成后，使用python setup.py install安装protobuf for python
+
+编译proto文件为java/py文件的方法：
+进入当前proto文件所在目录
+protoc --java_out=./ *.proto
+protoc --python_out=./ *.proto
+会编译完成所有proto文件为java文件或者py文件

@@ -1,0 +1,74 @@
+{% extends "freezer/api/base.tpl" %}
+{% load staticfiles %}
+{% load myfilter %}
+{% block title %}{{ title }}{% endblock %}
+{% block style %}
+    <link rel="Stylesheet" type="text/css" href="{% static 'css/freezer/api/room.css' %}"/>
+{% endblock %}
+
+
+{% block content %}
+
+    <h1 id="h1-top">药品柜总数 <span id="dev-Num"> 0</span> 台</h1>
+    <div style="background: white;border-bottom: 5px solid #F4F8FC;">
+        <canvas id="device-pie" width="600" height="450"
+                style="width:300px; height:225px;margin: 0 auto;display:block;"></canvas>
+    </div>
+    <table class="room-dev-table">
+        <tr>
+            <td class="room-list">
+                <p id="p1">
+                    <span id="room-Num" value="{{ room_id }}">{{ room_name }}({{ dev_total }})</span>
+                    <img id="sanjiao" src="{% static 'img/freezer/other_xiala.png' %}">
+                </p>
+            </td>
+            <td class="error-dev">
+                <p id="p2">
+                    <span id="error-devNum">异常设备</span>
+                    <img id="error-sanjiao" src="{% static 'img/freezer/other_xiala.png' %}">
+                </p>
+            </td>
+
+        </tr>
+    </table>
+    <ul id="allroom-ul" style="display: none;">
+        <li id="allroom">
+            <div class="list-group-item">
+                <div class="aroom" id="0">所有房间({{ all_total }})</div>
+                <p style="float: right; padding-right: 20px;" class="add-room">
+                    <img src="{% static 'img/freezer/other_jia.png' %}" height="17.5">
+                    添加房间
+                </p>
+            </div>
+        </li>
+        {% for result in results %}
+            <li class="ui-add-room" style="background-color: red;">
+                <div class="aroom list-group-item" id="{{ result.id }}">{{ result.name }}({{ result.total }})</div>
+                <div class="ui-del-room">
+                    <div class="ui-del-room-img"></div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    <div class="ui-scroll-top"><img src="{% static 'img/freezer/pgup.png' %}" width="35" height="35"></div>
+    <ul class="ui-list ui-list-text ui-border-tb" id="mydevicelist">
+
+    </ul>
+
+    </div>
+
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        var sanjiao_nomal_src = "{% static 'img/freezer/other_xiala.png' %}";
+        var sanjiao_press_src = "{% static 'img/freezer/other_shangla.png' %}";
+        //添加房间
+        var add_room = "{% url "add_room" %}";
+    </script>
+    <script src="{% static 'js/freezer/api/roomjs.js' %}"></script>
+{% endblock %}

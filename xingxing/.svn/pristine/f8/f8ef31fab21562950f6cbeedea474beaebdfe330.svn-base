@@ -1,0 +1,30 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>AndroidJs</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="button" id="btnAdd" value="添加按钮"/><br/><br/><br/>
+			<input type="button" id="btnShowOk" value="显示OK"/><br/><br/>
+		</form>
+		<script type="text/javascript" charset="utf-8" src="js/jsapi_doc.js"></script>
+		
+		<script>
+			var callback = function() {
+				alert("Android文字按钮回调");
+			};
+			document.getElementById("btnAdd").onclick = function() {
+				freezer.setRightButton("保存", callback);
+			};
+			var callback2 = function() {
+				alert("AndroidOK按钮回调");
+			};
+			document.getElementById("btnShowOk").onclick = function() {
+				freezer.showRightOk(callback2);
+			};
+		</script>
+	</body>
+</html>

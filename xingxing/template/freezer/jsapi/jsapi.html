@@ -1,0 +1,63 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>AndroidJs</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<form action="" method="post">
+			<input type="button" id="btnLocation" value="定位"/><br/><br/>
+			<input type="button" id="btnNotify" value="通知"/><br/><br/>
+			<input type="button" id="btnVibration" value="震动"/><br/><br/>
+			<input type="button" id="btnMessage" value="消息"/><br/><br/>
+			<input type="button" id="btnTitle" value="设置标题"/><br/><br/>
+			<input type="button" id="btnNetError" value="网络错误"/><br/><br/>
+			<input type="button" id="btnListDialog" value="显示List"/><br/><br/>
+			<input type="button" id="btnNewWindow" value="打开新URL"/><br/><br/>
+			<input type="button" id="btnNewWindowURL" value="打开新窗口URl"/><br/><br/>
+		</form>
+		<!-- 正式环境 -->
+		<script type="text/javascript" charset="utf-8" src="js/jsapi_doc.js"></script>
+		
+		<script>
+			var locatioinSucceed = function(address) {
+				alert("android端返回定位信息：" + address);
+			};
+			document.getElementById("btnLocation").onclick = function() {
+				freezer.location(locatioinSucceed);
+			};
+			document.getElementById("btnNotify").onclick = function() {
+				freezer.notify("web标题", "web内容")
+			};
+			document.getElementById("btnVibration").onclick = function() {
+				freezer.vibration(200);//震动200毫秒
+			};
+			document.getElementById("btnMessage").onclick = function() {
+				freezer.message("你的密码泄漏了")
+			}
+			document.getElementById("btnTitle").onclick = function() {
+				freezer.setTitle("测试标题");
+			}
+			document.getElementById("btnNetError").onclick = function() {
+				freezer.netError();
+			};
+			var userSelect = function(result) {
+				alert(result);
+			};
+			document.getElementById("btnListDialog").onclick = function() {
+				var myrooms = new Array(3);
+				myrooms[0] = "One";
+				myrooms[1] = "Two";
+				myrooms[2] = "Three";
+				freezer.showSelect("选择房间", myrooms, userSelect);
+			};
+			document.getElementById("btnNewWindow").onclick = function() {
+				freezer.openNewUrl('http://192.168.1.65/AndroidJs/callback.html', true);
+			};
+			document.getElementById("btnNewWindowURL").onclick = function() {
+				freezer.openNewUrlWindow('http://192.168.1.65/AndroidJs/callback2.html');
+			};
+		</script>
+	</body>
+</html>

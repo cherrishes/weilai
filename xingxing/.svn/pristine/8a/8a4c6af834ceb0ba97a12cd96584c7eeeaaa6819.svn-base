@@ -1,0 +1,21 @@
+from django.conf.urls import patterns, url, include
+
+
+# api url配置
+urlpatterns = patterns(
+    'app.freezer.api.views',
+    url(r'(?i)^service_phone$', 'service_phone'),
+    url(r'(?i)^about$', 'about'),
+    # 第3方帐号登录
+    url(r'(?i)^third_login$', 'third_login'),
+    # 上报mac地址
+    url(r'(?i)^submit_mac$', 'submit_mac'),
+    # 获取mac地址列表
+    url(r'(?i)^get_mac_list$', 'get_mac_list'),
+    # 更新Token时间
+    url(r'(?i)^update_token$', 'update_token'),
+    url(r'(?i)^device/', include('app.freezer.api.room_dev_list.urls')),
+    url(r'^error$', "error", name="error"),
+    # 上报ios设备device_token
+    url(r'(?i)^submit_device_token$', 'submit_device_token'),
+)

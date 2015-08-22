@@ -1,0 +1,11 @@
+package com.ebanswers.starfreezer.proto;
+
+option java_package = "com.ebanswers.starfreezer.proto";
+option java_outer_classname = "PackCustomService";
+
+message CustomServiceBody {
+	/**
+	 * 客服帐号
+	 */
+	optional string serviceNumber = 1;
+}

@@ -1,0 +1,94 @@
+{% load staticfiles %}
+{% load myfilter %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>测试页面</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+</head>
+<body>
+
+{% for foo in users %}
+
+    <p style="width:200px;margin:10px;float: left;height: 200px;border-radius: 5px;border:1px solid gray;"><label> <input
+            name="topic" data-id="{{ foo|trans_underline:"_id" }}" type="checkbox"/> <img width="50"
+                                                                                          style="border-radius: 50%;"
+                                                                                          src="{{ foo.head_url }}"
+                                                                                          alt=""/>
+        <br/>{{ foo.nickname }}</label><br><br>
+        {% for i in items %}
+            {% if i|trans_underline:"_id" == foo|trans_underline:"_id" %}
+                {{ i.token }}
+            {% endif %}
+
+{% endfor %}
+    </p>
+{% endfor %}
+
+<p style="clear: both"></p>
+<fieldset>
+    <legend>mqtt消息</legend>
+
+    <span style="vertical-align: middle">消息内容:</span>
+    <textarea name="" id="txaVal" cols="30" rows="10" style="vertical-align: middle">
+         {
+        "id": "1436268449",
+        "type": "push",
+        "val": {"title": "报警信息", "content": "温度传感器故障", "page": 1, "url": "http://www.baidu.com"}
+    }
+    </textarea>
+    <br/>
+
+    <p style="text-align: center">
+
+        <input type="button" value="发送" style="width: 80%" id="btnSend"/>
+    </p>
+</fieldset>
+
+<script type="text/javascript"
+        src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#btnSend").bind("click", function () {
+            var userArr = new Array();
+            var items = $("input:checkbox[name=topic]");
+            $.each(items, function (index, item) {
+                if ($(item).is(':checked')) {
+                    userArr.push($(item).attr("data-id"));
+                }
+            });
+            console.log(userArr);
+            if (userArr.length > 0) {
+                commit(JSON.stringify(userArr), 'washer', $('#txaVal').val());
+            }
+            else {
+                alert("请选择要推送的用户")
+            }
+        })
+    })
+    function commit(id, type, value) {
+        $.ajax({
+            url: location.href,
+            type: "POST",
+            data: {
+                "id": id,
+                "type": type,
+                "value": value
+            },
+            success: function (res) {
+                if (res == 1) {
+                    console.log("成功");
+                } else {
+                    console.log("失败");
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
