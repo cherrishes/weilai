@@ -1,0 +1,173 @@
+数据库设计-mysql
+================
+
+基本信息
+-------
+
+* 主机：192.168.0.62
+* 数据库名称：ebdb_smartsys
+* 帐号：root
+* 密码：5iq.com
+* 端口号：3306
+
+
+表结构
+-------
+
+::
+
+        -- ----------------------------
+        -- Table structure for ebt_agency
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_agency`;
+        CREATE TABLE `ebt_agency` (
+          `ebf_agency_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '代理商编号',
+          `ebf_factory_id` int(11) DEFAULT NULL COMMENT '厂家编号',
+          `ebf_agency_name` varchar(64) DEFAULT NULL COMMENT '代理商名称',
+          `ebf_agency_remarks` text COMMENT '备注',
+          `ebf_agency_uid` varchar(512) DEFAULT NULL COMMENT '唯一标识',
+          `ebf_agency_address` varchar(1024) DEFAULT NULL COMMENT '地址',
+          `ebf_agency_contact` varchar(32) DEFAULT NULL COMMENT '联系方式',
+          PRIMARY KEY (`ebf_agency_id`),
+          KEY `FK_Reference_4` (`ebf_factory_id`),
+          CONSTRAINT `FK_Reference_4` FOREIGN KEY (`ebf_factory_id`) REFERENCES `ebt_factory` (`ebf_factory_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='代理商表';
+
+        -- ----------------------------
+        -- Table structure for ebt_device
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_device`;
+        CREATE TABLE `ebt_device` (
+          `ebf_device_id` varchar(64) NOT NULL COMMENT '设备编号（mac地址）',
+          `ebf_device_alias` varchar(64) DEFAULT NULL COMMENT '别名',
+          `ebf_device_type` int(2) NOT NULL DEFAULT '1' COMMENT '设备类型（1：洗衣机，0：未知）',
+          `ebf_factory_id` int(11) DEFAULT NULL COMMENT '厂家编号',
+          `ebf_agency_id` int(11) DEFAULT NULL COMMENT '代理商编号',
+          `ebf_device_is_online` int(1) NOT NULL DEFAULT '0' COMMENT '是否在线（1：在线，0：离线）',
+          `ebf_device_model` varchar(512) DEFAULT NULL COMMENT '设备型号',
+          `ebf_device_tag` varchar(2048) DEFAULT NULL COMMENT '设备标签（json格式，给设备定义的各种功能，如地址、楼层等信息）',
+          `ebf_device_property` varchar(2048) DEFAULT NULL COMMENT '设备属性（json格式，保存如洗涤模式与收费标准）',
+          `ebf_device_create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+          PRIMARY KEY (`ebf_device_id`),
+          KEY `Index_1` (`ebf_factory_id`),
+          KEY `Index_2` (`ebf_agency_id`),
+          CONSTRAINT `FK_Reference_10` FOREIGN KEY (`ebf_agency_id`) REFERENCES `ebt_agency` (`ebf_agency_id`),
+          CONSTRAINT `FK_Reference_9` FOREIGN KEY (`ebf_factory_id`) REFERENCES `ebt_factory` (`ebf_factory_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='设备表';
+
+        -- ----------------------------
+        -- Table structure for ebt_factory
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_factory`;
+        CREATE TABLE `ebt_factory` (
+          `ebf_factory_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '厂家编号',
+          `ebf_factory_name` varchar(64) DEFAULT NULL COMMENT '厂家名称',
+          `ebf_factory_address` varchar(1024) DEFAULT NULL COMMENT '厂家地址',
+          `ebf_factory_contact` varchar(32) DEFAULT NULL COMMENT '厂家联系方式',
+          `ebf_factory_uid` varchar(512) DEFAULT NULL COMMENT '厂家标识',
+          `ebf_factory_remarks` text COMMENT '备注',
+          PRIMARY KEY (`ebf_factory_id`)
+        ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='厂家表';
+
+        -- ----------------------------
+        -- Table structure for ebt_pay
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_pay`;
+        CREATE TABLE `ebt_pay` (
+          `ebf_pay_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '支付编号',
+          `ebf_device_id` varchar(64) DEFAULT NULL COMMENT '设备编号（mac地址）',
+          `ebf_user_id` varchar(128) DEFAULT NULL COMMENT '账号',
+          `ebf_pay_trade_no` varchar(128) NOT NULL COMMENT '订单号',
+          `ebf_pay_fee` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '支付费用',
+          `ebf_pay_is_success` int(1) NOT NULL COMMENT '是否支付成功（1：成功，0:失败）',
+          `ebf_pay_create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+          `ebf_pay_type` int(1) NOT NULL COMMENT '支付类型（1：支付宝，2：微信支付，3：银联）',
+          `ebf_pay_content` varchar(2048) DEFAULT NULL COMMENT '订单描述（json格式，保存洗涤模式、时间等，例如{"wash_mode":"标准洗","wash_time":300}）',
+          `ebf_pay_remarks` text COMMENT '备注',
+          `ebf_pay_status` int(1) NOT NULL DEFAULT '0' COMMENT '支付状态（0:等待付款，1：支付成功，-1支付失败，2：退款，3：取消支付）',
+          `ebf_pay_pay_date` datetime DEFAULT NULL COMMENT '成功支付时间',
+          PRIMARY KEY (`ebf_pay_id`),
+          UNIQUE KEY `Index_1` (`ebf_pay_trade_no`),
+          KEY `FK_Reference_2` (`ebf_device_id`),
+          KEY `FK_Reference_3` (`ebf_user_id`),
+          CONSTRAINT `FK_Reference_3` FOREIGN KEY (`ebf_user_id`) REFERENCES `ebt_user` (`ebf_user_id`),
+          CONSTRAINT `FK_Reference_2` FOREIGN KEY (`ebf_device_id`) REFERENCES `ebt_device` (`ebf_device_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='支付记录表';
+
+        -- ----------------------------
+        -- Table structure for ebt_setup
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_setup`;
+        CREATE TABLE `ebt_setup` (
+          `ebf_setup_key` varchar(128) NOT NULL COMMENT '配置键',
+          `ebf_setup_value` varchar(2048) NOT NULL COMMENT '配置值',
+          `ebf_setup_type` int(1) NOT NULL DEFAULT '0' COMMENT '配置类型（0：普通配置）',
+          PRIMARY KEY (`ebf_setup_key`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='配置表';
+
+        -- ----------------------------
+        -- Table structure for ebt_user
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_user`;
+        CREATE TABLE `ebt_user` (
+          `ebf_user_id` varchar(128) NOT NULL COMMENT '账号',
+          `ebf_user_account` varchar(128) DEFAULT NULL COMMENT '内部账号(用于第三方账号登录时关联)',
+          `ebf_user_password` varchar(512) NOT NULL COMMENT '密码',
+          `ebf_user_headurl` varchar(1024) DEFAULT NULL COMMENT '头像地址',
+          `ebf_user_nickname` varchar(32) DEFAULT NULL COMMENT '昵称',
+          `ebf_user_gender` int(1) NOT NULL DEFAULT '0' COMMENT '性别(1:男,2:女,0:未知)',
+          `ebf_user_type` int(2) NOT NULL DEFAULT '0' COMMENT '用户类型（0：普通用户，1：管理员，2：厂商，3：运营商）',
+          `ebf_user_account_type` int(2) NOT NULL DEFAULT '0' COMMENT '账号类型（0：内部账号，1：qq，2：微信，3：新浪微博）',
+          `ebf_user_login_date` datetime DEFAULT NULL COMMENT '最近登录时间',
+          `ebf_user_is_online` int(1) NOT NULL DEFAULT '0' COMMENT '是否在线（0：离线，1：在线）',
+          `ebf_user_remarks` varchar(64) DEFAULT NULL COMMENT '备注',
+          `ebf_user_create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
+          PRIMARY KEY (`ebf_user_id`),
+          KEY `Index_1` (`ebf_user_type`),
+          KEY `Index_2` (`ebf_user_account_type`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户表';
+
+        -- ----------------------------
+        -- Table structure for ebt_user_agency
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_user_agency`;
+        CREATE TABLE `ebt_user_agency` (
+          `ebf_user_id` varchar(128) NOT NULL COMMENT '账号',
+          `ebf_agency_id` int(11) DEFAULT NULL COMMENT '代理商编号',
+          PRIMARY KEY (`ebf_user_id`),
+          KEY `FK_Reference_8` (`ebf_agency_id`),
+          CONSTRAINT `FK_Reference_7` FOREIGN KEY (`ebf_user_id`) REFERENCES `ebt_user` (`ebf_user_id`),
+          CONSTRAINT `FK_Reference_8` FOREIGN KEY (`ebf_agency_id`) REFERENCES `ebt_agency` (`ebf_agency_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号代理商关系表';
+
+        -- ----------------------------
+        -- Table structure for ebt_user_factory
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_user_factory`;
+        CREATE TABLE `ebt_user_factory` (
+          `ebf_user_id` varchar(128) NOT NULL COMMENT '账号',
+          `ebf_factory_id` int(11) DEFAULT NULL COMMENT '厂家编号',
+          PRIMARY KEY (`ebf_user_id`),
+          KEY `FK_Reference_6` (`ebf_factory_id`),
+          CONSTRAINT `FK_Reference_5` FOREIGN KEY (`ebf_user_id`) REFERENCES `ebt_user` (`ebf_user_id`),
+          CONSTRAINT `FK_Reference_6` FOREIGN KEY (`ebf_factory_id`) REFERENCES `ebt_factory` (`ebf_factory_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='账号厂商关系表';
+
+        -- ----------------------------
+        -- Table structure for ebt_user_info
+        -- ----------------------------
+        DROP TABLE IF EXISTS `ebt_user_info`;
+        CREATE TABLE `ebt_user_info` (
+          `ebf_user_id` varchar(128) NOT NULL COMMENT '账号',
+          `ebf_ui_province` varchar(32) DEFAULT NULL COMMENT '省份',
+          `ebf_ui_city` varchar(32) DEFAULT NULL COMMENT '城市',
+          `ebf_ui_area` varchar(32) DEFAULT NULL COMMENT '区县',
+          `ebf_ui_token` varchar(1024) DEFAULT NULL COMMENT 'token值',
+          `ebf_ui_school` varchar(64) DEFAULT NULL COMMENT '学校',
+          `ebf_ui_sign` varchar(64) DEFAULT NULL COMMENT '个性签名',
+          `ebf_ui_hobby` varchar(1024) DEFAULT NULL COMMENT '兴趣爱好',
+          `ebf_ui_update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '更新时间',
+          PRIMARY KEY (`ebf_user_id`),
+          CONSTRAINT `FK_Reference_1` FOREIGN KEY (`ebf_user_id`) REFERENCES `ebt_user` (`ebf_user_id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户信息从表';
+

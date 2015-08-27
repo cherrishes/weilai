@@ -1,0 +1,321 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>进度规划与分工 &mdash; washer 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="washer 1.0 documentation" href="index.html"/>
+        <link rel="next" title="数据库设计-mongodb" href="db-mongodb.html"/>
+        <link rel="prev" title="需求分析" href="demand.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="index.html" class="icon icon-home"> washer
+        
+
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="standard.html">项目规范</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id2">前端</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#python">python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#django">django</a></li>
+<li class="toctree-l2"><a class="reference internal" href="standard.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tech.html">相关技术和版本</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id2">前端</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tech.html#pc">PC端</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tech.html#id3">移动设备端</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id4">后台</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id5">数据库</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tech.html#id6">关系数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tech.html#id7">非关系数据库</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id8">缓存</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id9">其它</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tech.html#id10">部署</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tree.html">源码目录结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="demand.html">需求分析</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id2">任务计划功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="demand.html#id3">其它</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">进度规划与分工</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">进度规划：2015.08-25~</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#api">api</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">api(暂时不做)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#appjsapi">app需要提供的jsapi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#android-app">需要与android app端对接的</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">任务分工</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="db-mongodb.html">数据库设计-mongodb</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="db-mongodb.html#id1">基本信息</a></li>
+<li class="toctree-l2"><a class="reference internal" href="db-mongodb.html#id2">集合结构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-user">ebc_user(好友分组集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-group">ebc_group(好友分组集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-friends">ebc_friends(好友集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-task">ebc_task(任务清单集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-share">ebc_share(分享记录集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-challenge">ebc_challenge(挑战消息集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-msg-status">ebc_msg_status(任务清单状态集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-user-position">ebc_user_position(用户位置集合)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="db-mongodb.html#ebc-device-position">ebc_device_position(设备位置集合)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="push.html">流程图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="push.html#id2">消息推送</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deploy.html">部署</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id2">域名</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id3">端口号</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#id4">波特率</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#uwsgi">uwsgi配置文件</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deploy.html#nginx">nginx配置</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">api文档</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id1">第三方帐号登录接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id2">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id3">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#token">更新token时间接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id4">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id5">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id6">上报用户位置接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id7">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id8">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id9">附近的商家接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id10">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id11">输出参数</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#id12">任务分享接口</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id13">输入参数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#id14">输出参数</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="debug.html">测试</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#id2">测试二维码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#id3">测试二维码2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug.html#id4">测试二维码3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="log.html">更新日志</a></li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">washer</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>进度规划与分工</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="id1">
+<h1>进度规划与分工<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>进度规划：2015.08-25~<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="api">
+<h3>api<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h3>
+<p>接口必须得能够处理重复调用的情况</p>
+<ol class="arabic simple">
+<li>第三方账号登录api</li>
+<li>更新token的api</li>
+<li>根据坐标计算附近的设备的api（接口必须得能够处理重复调用的情况）</li>
+<li>app上的“关于”api</li>
+<li>消息推送接口(基于mqtt与终端联调)</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h3>api(暂时不做)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>内部登录注册api</li>
+<li>短信校验api（发送短信，返回校验码），注意每个token的时间间隔判断（30s之后才能再发）</li>
+</ol>
+</div>
+<div class="section" id="appjsapi">
+<h3>app需要提供的jsapi<a class="headerlink" href="#appjsapi" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>调起扫一扫功能，用于扫描设备上的二维码</li>
+<li>利用支付宝sdk，调起支付界面</li>
+</ol>
+</div>
+<div class="section" id="android-app">
+<h3>需要与android app端对接的<a class="headerlink" href="#android-app" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li>基于mqtt的消息推送（wmqtt.jar）</li>
+<li>支付宝sdk是否需要回调地址处理？</li>
+</ol>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>任务分工<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="db-mongodb.html" class="btn btn-neutral float-right" title="数据库设计-mongodb" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="demand.html" class="btn btn-neutral" title="需求分析" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, 56iq.
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
