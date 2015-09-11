@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'frozen/css/frozen.css' %}"/>
+    <style>
+        .ui-demo-block{
+            margin-left: 8%;
+            margin-bottom: 15px;
+        }
+        .ui-demo-block p{
+            font-size: 15px;
+            margin-top: 10px;
+            position: relative;
+        }
+         span{
+
+            position: absolute;
+            top: -1px;
+            right: 30px;
+            font-size: 11px;
+        }
+         em{
+             color: #00aeef;
+             margin-left: 10px;
+             font-size: 20px;
+         }
+        .ui-img{
+            width: 35px;
+            height: 48px;
+        }
+        .ui-list-link>li:after{
+            content: initial!important;
+        }
+        .ui-list li h4{
+            font-size: 20px;
+        }
+        .ui-week ul{
+            width: 100%;
+
+        }
+        .ui-week ul li{
+            display: inline-block;
+            width: 26px;
+            margin-left: 3%;
+            margin-right: 3%;
+            text-align: center;
+        }
+        .ui-ul-text li{
+            font-size: 10px!important;
+        }
+        
+    </style>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        $(function(){
+            $("#ui-link-border1").on('tap',function(){
+
+                window.location.href='/wei_lai/list'
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="ui-next-step">
+        <em class="ui-next-text">下一步行动</em>
+        <div class="demo-block ui-demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>界面设计图
+                </label>
+                 <span>项目</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />锻炼口才
+                </label>
+                 <span>计划</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />计划第N 个步骤
+                </label>
+                 <span>计划</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />狼图腾
+                </label>
+                 <span>想读的书籍</span>
+            </p>
+        </div>
+    </div>
+    <div class="demo-item">
+        
+        <div class="demo-block">
+            <ul class="ui-list ui-list-one ui-list-link ui-border-tb ui-list-active" >
+                <li class="ui-border-t" id="ui-link-border1" >
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-1.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">项目</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-2.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">目标</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-3.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">计划</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-4.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">想读的书籍</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-4.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">想看的电影</h4>
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'frozen/css/frozen.css' %}"/>
+    <style>
+        .ui-date{
+            width: 100%;
+            height: 120px;
+            text-align: center;
+        }
+        .ui-current-date{
+            font-size: 22px;
+        }
+        .ui-img{
+            width: 35px;
+            height: 48px;
+        }
+        .ui-list-link>li:after{
+            content: initial!important;
+        }
+        .ui-list li h4{
+            font-size: 20px;
+        }
+        .ui-week ul{
+            width: 100%;
+
+        }
+        .ui-week ul li{
+            display: inline-block;
+            width: 26px;
+            margin-left: 3%;
+            margin-right: 3%;
+            text-align: center;
+        }
+        .ui-ul-text li{
+            font-size: 10px!important;
+        }
+        
+    </style>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        $(function(){
+            $("#ui-link-border1").on('tap',function(){
+
+                window.location.href='/wei_lai/list'
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="ui-date">
+        <span class="ui-current-date">08/27</span>
+        <div class="ui-week">
+            <ul>
+                <li>日</li><li>一</li><li>二</li><li>三</li><li>四</li><li>五</li><li>六</li>
+            </ul>
+            <ul>
+                <li>22</li><li>23</li><li>24</li><li>25</li><li>26</li><li>27</li><li>28</li>
+            </ul>
+            <ul class="ui-ul-text">
+                <li>80%完成</li><li>60%完成</li><li>24%完成</li><li>25%完成</li><li>70%完成</li><li>待办7</li><li>待办9</li>
+            </ul>
+        </div>
+    </div>
+    <div class="demo-item">
+        
+        <div class="demo-block">
+            <ul class="ui-list ui-list-one ui-list-link ui-border-tb ui-list-active" >
+                <li class="ui-border-t" id="ui-link-border1" >
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-1.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">今日待办</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-2.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">明日待办</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-3.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">待办收集箱</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-4.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">接收到的任务</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-5.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">已完成</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150907-6.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">重复任务</h4>
+
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <title>清单</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'frozen/css/frozen.css' %}"/>
+    <style>
+        .ui-today{
+            text-align: center;
+        }
+        .demo-block{
+            margin-left: 8%;
+            margin-bottom: 10px;
+        }
+        .demo-block p{
+            font-size: 15px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        p{
+            color: #333;
+        }
+        hr{
+            height:1px;border:none;border-top:1px solid #ccc;
+        }
+        img{
+            width: 17px;
+            height: 25px;
+            position: absolute;
+            top: -1px;
+            right: 20px;
+        }
+        span{
+
+            position: absolute;
+            top: -1px;
+            right: 30px;
+            font-size: 11px;
+        }
+        .ui-next-task{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border:1px solid #ccc;
+            border-left: none;
+            border-right: none;
+            color: #333;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .demo-desc{
+            margin-left: 10px;
+        }
+        .ui-cover {
+            position:absolute;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            z-index:999999999;
+        }
+    </style>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        window.onload = function(){
+    var i = document.getElementsByTagName("img"), len = i.length, loaded = 0;
+    for(var j=0;j<len;j++){
+        i[j].onload = (function(){
+                loaded ++;
+                if(loaded == len){
+                    return document.getElementById("cover").style.display = 'none';
+                }
+        })(j);
+    }
+}
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="ui-today">
+       今天
+    </div>
+    <hr>
+     <div class="demo-item">
+        <p class="demo-desc">上午</p>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>跑步
+                </label>
+                 <img src="{% static 'img/task/150911-6.png' %}">
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />晨读半小时
+                </label>
+                 <img src="{% static 'img/task/150911-6.png' %}">
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />系统结构
+                </label>
+                 <img src="{% static 'img/task/150911-5.png' %}">
+            </p>
+        </div>
+    </div>
+    <div class="demo-item">
+        <p class="demo-desc">下午</p>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>数据结构作业
+                </label>
+                 <img src="{% static 'img/task/150911-5.png' %}">
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />打篮球
+                </label>
+
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />读利用python进行数据分析
+                </label>
+
+            </p>
+        </div>
+    </div>
+    <div class="demo-item">
+        <p class="demo-desc">晚上</p>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>打电话回家
+                </label>
+
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />快乐大本营
+                </label>
+                 <img src="{% static 'img/task/150911-7.png' %}">
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />读围城
+                </label>
+
+            </p>
+        </div>
+    </div>
+    <div class="ui-next-task">下一步行动</div>
+    <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>界面设计图
+                </label>
+                 <span>项目</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />锻炼口才
+                </label>
+                 <span>计划</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />计划第N 个步骤
+                </label>
+                 <span>计划</span>
+            </p>
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"  />狼图腾
+                </label>
+                 <span>想读的书籍</span>
+            </p>
+        </div>
+<div class="ui-cover" id="cover"></div>
+</div>
+</body>
+</html>

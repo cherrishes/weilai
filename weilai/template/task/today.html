@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <title>今日待办</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'frozen/css/frozen.css' %}"/>
+    <style>
+
+        .demo-block {
+            margin-left: 8%;
+        }
+
+        .demo-block p {
+            font-size: 15px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            position: relative;
+
+        }
+
+        p {
+            color: #333;
+        }
+
+        img {
+            width: 17px;
+            height: 25px;
+            position: absolute;
+            top: -1px;
+            right: 20px;
+        }
+
+        span {
+
+            position: absolute;
+            top: -1px;
+            right: 30px;
+            font-size: 11px;
+        }
+
+        .demo-desc {
+
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border: 1px solid #ccc;
+        }
+
+        .demo-desc em {
+            margin-left: 10px;
+            color: #00aeef;
+        }
+
+        .demo-desc-press {
+            background-color: #ccc;
+        }
+
+        .ui-border-input {
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+        }
+
+        .ui-input-wrap {
+            height: 55px !important;
+        }
+
+        .ui-input {
+            height: 40px !important;
+        }
+
+        .ui-btn {
+            width: 65px;
+            height: 40px !important;
+        }
+        .ui-item-night{
+            margin-bottom: 60px;
+        }
+    </style>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        $(function () {
+            $(".demo-desc").on('tap', function () {
+                var id = $(this).attr('id');
+                if (id == 'ui-desc-morning') {
+                    $(".demo-desc").removeClass('demo-desc-press');
+                    $("#ui-desc-morning").addClass('demo-desc-press')
+                }
+                else if (id == 'ui-desc-afternoon') {
+                    $(".demo-desc").removeClass('demo-desc-press');
+                    $("#ui-desc-afternoon").addClass('demo-desc-press')
+                }
+                else if (id == 'ui-desc-night') {
+                    $(".demo-desc").removeClass('demo-desc-press');
+                    $("#ui-desc-night").addClass('demo-desc-press')
+                }
+
+            });
+            var el;
+            $("#btnSave").tap(function () {
+                var re = $("#ui-text-input").val();
+                var input_text = Trim(re, "g");
+                if (input_text.length == 0) {
+                    el = $.tips({
+                        content: '您未安排任何任务',
+                        stayTime: 2000,
+                        type: "warn"
+                    });
+                    el.on("tips:hide", function () {
+                        console.log("tips hide");
+                    })
+                }
+                else{
+                    var html='<p><label class="ui-checkbox-s"><input type="checkbox" name="checkbox"/>'+input_text+'</label></p>';
+
+                    $(".demo-desc-press").next().append(html);
+                    $("#ui-text-input").val("");
+                }
+
+
+            });
+            // 功能: 1)去除字符串前后所有空格
+            //      2)去除字符串中所有空格(包括中间空格,需要设置第2个参数为:g)
+            function Trim(str, is_global) {
+                var result;
+                result = str.replace(/(^\s+)|(\s+$)/g, "");
+                if (is_global.toLowerCase() == "g")
+                    result = result.replace(/\s/g, "");
+                return result;
+            }
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+
+    <div class="demo-item">
+        <div class="demo-desc demo-desc-press" id="ui-desc-morning"><em>上午</em></div>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>跑步
+                </label>
+                <img src="{% static 'img/task/150907-6.png' %}">
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>晨读半小时
+                </label>
+                <img src="{% static 'img/task/150907-6.png' %}">
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>系统结构
+                </label>
+
+            </p>
+        </div>
+    </div>
+    <div class="demo-item">
+        <div class="demo-desc" id="ui-desc-afternoon"><em>下午</em></div>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>数据结构作业
+                </label>
+
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>打篮球
+                </label>
+
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>读利用python进行数据分析
+                </label>
+
+            </p>
+        </div>
+    </div>
+    <div class="demo-item ui-item-night">
+        <div class="demo-desc" id="ui-desc-night"><em>晚上</em></div>
+        <div class="demo-block">
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>打电话回家
+                </label>
+
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>看快乐大本营
+                </label>
+
+            </p>
+
+            <p>
+                <label class="ui-checkbox-s">
+                    <input type="checkbox" name="checkbox"/>读围城
+                </label>
+
+            </p>
+        </div>
+    </div>
+
+    <div class="demo-item ui-border-input">
+
+        <div class="demo-block1">
+            <section class="ui-input-wrap ui-border-t">
+                <div class="ui-input ui-border-radius">
+                    <input type="text" id="ui-text-input" value="" placeholder="我也安排一下...">
+                </div>
+                <button class="ui-btn ui-btn-primary" id="btnSave">确认</button>
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+</html>

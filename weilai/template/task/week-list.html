@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="initial-scale=1.0,user-scalable=no,maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name='apple-touch-fullscreen' content='yes'>
+    <meta name="full-screen" content="yes">
+    <title>周排行榜</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'frozen/css/frozen.css' %}"/>
+    <style>
+        .ui-date{
+            width: 100%;
+            height: 170px;
+            text-align: center;
+        }
+        .ui-current-date{
+            font-size: 22px;
+        }
+        .ui-img{
+            width: 35px;
+            height: 48px;
+        }
+        .ui-list-link>li:after{
+            content: initial!important;
+        }
+        .ui-list li h4{
+            font-size: 20px;
+        }
+        .ui-week ul{
+            width: 100%;
+
+        }
+        .ui-week ul li{
+            display: inline-block;
+            width: 40px;
+            margin-left: 3%;
+            margin-right: 3%;
+            text-align: center;
+        }
+        .ui-ul-text li{
+            font-size: 10px!important;
+        }
+        .ui-arrow{
+            width: 23px;
+            height: 14px;
+        }
+        .ui-head-img{
+            width: 48px;
+            height: 48px;
+        }
+        
+    </style>
+    <script src="{% static 'js/zepto.merge.min.js' %}"></script>
+    <script src="{% static 'frozen/frozen.js' %}"></script>
+    <script>
+        $(function(){
+            $("#ui-link-border1").on('tap',function(){
+
+
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="content">
+    <div class="ui-date">
+        <span class="ui-current-date"><img class="ui-arrow" src="{% static 'img/task/150911-10.png' %}">周排行榜</span>
+        <div class="ui-week">
+            <ul>
+                <li>3</li><li>4</li><li>5</li><li>6</li><li>7</li>
+            </ul>
+            <ul>
+                <li><img class="ui-head-img" src="{% static 'img/task/150911-12.png' %}"></li><li><img class="ui-head-img" src="{% static 'img/task/150911-13.png' %}"></li>
+                <li><img class="ui-head-img" src="{% static 'img/task/150911-14.png' %}"></li>
+                <li><img class="ui-head-img" src="{% static 'img/task/150911-15.png' %}"></li><li><img class="ui-head-img" src="{% static 'img/task/150911-16.png' %}"></li>
+            </ul>
+            <ul>
+                <li>张三</li><li>香蕉</li><li>薯条</li><li>青梅</li><li>王五</li>
+            </ul>
+            <ul class="ui-ul-text">
+                <li>80%完成</li><li>60%完成</li><li>24%完成</li><li>25%完成</li><li>70%完成</li>
+            </ul>
+        </div>
+    </div>
+    <div class="demo-item">
+        
+        <div class="demo-block">
+            <ul class="ui-list ui-list-one ui-list-link ui-border-tb ui-list-active" >
+                <li class="ui-border-t" id="ui-link-border1" >
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-8.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">动态</h4>
+
+                    </div>
+                </li>
+                <li class="ui-border-t">
+                    <div class="ui-list-thumb">
+                        <img class="ui-img" src="{% static 'img/task/150911-9.png' %}">
+                    </div>
+                    <div class="ui-list-info">
+                        <h4 class="ui-nowrap">我的关注</h4>
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
